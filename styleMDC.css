@@ -1,0 +1,376 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body{
+    background-image: url("imgs/back.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.container{
+    padding: 0.5%;
+    width: 99%;
+    height: 99%;
+}
+
+
+@font-face {
+    font-family: "msu1";
+    src: url(font/msu1.ttf);
+}
+
+#logo {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 25%;
+}
+
+#logo img {
+    height: 100%;
+    z-index: 10;
+}
+
+#close {
+    float: left;
+    height: 100%;
+    padding: 0 1%;
+    font-size: 1vw;
+    width: 120px;
+}
+
+#close:hover {
+    cursor: pointer;
+    background-color: rgba(90, 14, 14, 0.795);
+}
+
+#close img {
+    height: 70%;
+}
+
+.amount {
+    float: right;
+    height: 100%;
+    padding: 0 5%;
+    font-size: 1vw;
+    background: rgba(14, 53, 90, 0.473)
+}
+
+.blackTheme{
+    background-color: rgba(53, 53, 53, 0.733);
+    color: azure;
+}
+
+.whiteTheme{
+    background-color: rgba(236, 236, 236, 0.507);
+    color: black;
+}
+
+.mdcContent {
+    font-family:"msu1";
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 55%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-color: black;
+    resize: both;
+    overflow: hidden;
+    min-width: 750px;
+    min-height: 430px;
+}
+
+.header {
+    width: 100%;
+    height: 10%;
+    background-color: antiquewhite;
+    color: azure;
+    font-size: 2.3vh;
+    text-align: center;
+    cursor: move;
+}
+
+.header .topbar{
+    background: linear-gradient(to right, #1D6EBA , #0E355A);
+    height: 50%;
+    padding-right: 20%;
+}
+.header .bottonBar{
+    background: linear-gradient(to right, #0E355A , #1D6EBA);
+    height: 50%;
+    padding-right: 20%;
+}
+
+
+
+.content {
+    width: 100%;
+    height: 90%;
+}
+
+.leftMenu {
+    height: 100%;
+    width: 12%;
+    text-align: center;
+    float: left;
+    Background-color: rgba(46, 46, 46, 0.562);
+}
+
+.leftMenu .option {
+    height: 35px;
+    width: 98%;
+    background-color: rgb(29, 110, 186);
+    color: azure;
+    font-size: 2vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 1%;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200%; 
+}
+
+
+
+.leftMenu .divisory {
+    height: 2%;
+    width: 98%;
+    margin: 2%;
+}
+
+
+.leftMenu .option:hover {
+    background-color: #0E355A;
+    cursor: pointer;
+}
+
+.leftMenu .option:active{
+    background-color: rgb(2, 11, 20);
+}
+
+.InnerContent {
+    float: left;
+    height: 100%;
+    width: 88%;
+}
+
+.generalContent {
+    height: 95%;
+    width: 100%;
+}
+
+.codeStatus {
+    height: 5%;
+    width: 100%;
+}
+
+.codeStatus .code {
+    height: 80%;
+    width: 11.5%;
+    float: left;
+    background-color: rgba(29, 110, 186, 0.925);
+    text-align: center;
+    margin: 0.2%;
+    font-size: 2vh;
+}
+
+.codeStatus .code:hover {
+    background-color: #0E355A;
+    cursor: pointer;
+    color: azure;
+}
+
+
+.codeStatus .divisory {
+    height: 100%;
+    width: 1%;
+    float: left;
+}
+
+.codeStatus .emergency {
+    background-color: rgba(90, 14, 14, 0.795);
+    color: azure;
+}
+
+.optionPanel{
+    background-color: whitesmoke;
+    height: 95%;
+    width: 95%;
+    margin: 1%;
+}
+
+.status {
+    height: 10%;
+    width: 100%;
+}
+
+
+.status .option {
+    height: 50%;
+    background-color: rgb(29, 110, 186);
+    color: azure;
+    font-size: 1.6vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 1%;
+    padding: 0 35px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200%; 
+    z-index: 100;
+}
+
+
+
+.status .divisory {
+    width: 2%;
+    height: 50%;
+    margin: 1%;
+    float: left;
+}
+
+
+.status .option:hover {
+    background-color: #0E355A;
+    cursor: pointer;
+}
+
+.leftMenu .option:active{
+    background-color: rgb(2, 11, 20);
+}
+
+.mdcContentMain{
+    height: 90%;
+    width: 100%;
+}
+
+.active{
+
+}
+
+
+.switchContainer {
+    padding-top: 1%;
+    float: left;
+    height: 100%;
+    font-size: 1vh;
+    text-align: center;
+    width: 120px;
+}
+
+.switch {
+    position: relative;
+    width: 25px;
+    height: 15px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {display:none;}
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1vh;
+    width: 1vh;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .switchContainer input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  .switchContainer input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  .switchContainer input:checked + .slider:before {
+    -webkit-transform: translateX(1vh);
+    -ms-transform: translateX(1vh);
+    transform: translateX(1vh);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 50px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .leftMenu .unitStat {
+    height: 25px;
+    width: 12%;
+    background-color: rgba(27, 27, 27, 0.356);
+    font-size: 1.5vh;
+    overflow: visible;
+    text-overflow: ellipsis;
+    
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200%; 
+
+    position: absolute;
+    bottom: 0px;
+}
+.leftMenu .unitStatus {
+    float: left;
+    height: 100%;
+    width: 10px;
+}
+
+.available
+{    
+    background-color: rgb(14, 90, 18)
+}
+
+.onscene
+{    
+    background-color: rgb(29, 31, 141)
+}
+
+.responding
+{    
+    background-color: rgb(185, 167, 0)
+}
+.unavailable
+{    
+    background-color: rgb(185, 0, 0)
+}
+
+#CopyRights{
+    font-size: 10px;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    font-family: monospace;
+}
