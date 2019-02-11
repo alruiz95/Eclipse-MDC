@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/eclipse-dark.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="centered" style="width:965px;height:400px">
+        <div class="left-menu">
+            <div class="logo"><img src="images/projection/icon_house.png" width="125"> <span id="ownerName">Tony</span>'s House
+                <br><a>(ESC to close)</a></div>
+            <div class="accordion">
+                <div class="section" target-panel="#property">
+                    <input type="radio" name="accordion-1" id="section-1" checked="checked">
+                    <label for="section-1"><span>Property Management</span></label>
+                </div>
+                <div class="section" target-panel="#garage">
+                    <input type="radio" name="accordion-1" id="section-2" value="toggle">
+                    <label for="section-2"><span>Garage</span></label>
+                </div>
+                <div class="section" target-panel="#keysmanagement">
+                    <input type="radio" name="accordion-1" id="section-3" value="toggle">
+                    <label for="section-3"><span>Keys Management</span></label>
+                </div>
+            </div>
+        </div>
+        <div id="property" class="panel panel-dark panel-scale" style="width:760px">
+            <div class="panel-header">
+                <div>Property Management</div>
+                <hr>
+            </div>
+            <div style="text-align:justify"><span><div class="split-left"><ul><h1 style="text-align:center" id="propertyTag">Sell house</h1><li id="propertInfo">Every relevant information about this house is displayed on the right hand side of this panel. Garage slots mean how many vehicles you will be able to store.</li><li id="propertInfo2">Vehicles will be moved to mors, all stash contents will be transfered to the new owner.</li><li><span class="btn btn-default" id="sellButton">Sell house</span>
+                <input type="text" placeholder="Selling price..." id="sellPrice">
+                </li>
+                </ul>
+            </div>
+            <div class="split-right">
+                <h1 style="text-align:center">Information</h1>
+                <ul>
+                    <li>House address: <span id="streetName">Alavanderer st.</span> <span id="houseNumber">5</span></li>
+                    <li>Estimated house worth: <span id="houseWorth">5600000</span> <span style="color:#90ee90">$</span></li>
+                    <li>Currently this house is <span style="color:#f08080" id="isForSale">NOT</span> for sale</li>
+                    <li>This house has <span id="garageSlots">1</span> garage slots</li>
+                    <li>Current house selling tax is <span id="houseTax">5</span>%</li>
+                </ul>
+            </div>
+            </span>
+        </div>
+    </div>
+    <div id="garage" class="panel panel-dark panel-scale" style="display:none;width:760px">
+        <div class="panel-header">
+            <div>Garage</div>
+            <hr>
+        </div>
+        <div style="text-align:justify"><span><div class="split-left"><h1 style="text-align:center">Proximity Vehicles</h1><div style="overflow-y:scroll;max-height:230px"><ul id="proximityVehicles"><li style="text-align:center">There are no vehicles in proximity</li></ul></div></div><div class="split-right"><h1 style="text-align:center">Stored Vehicles</h1><div style="overflow-y:scroll;max-height:230px"><ul id="parkedVehicles"><li style="text-align:center">You have no parked vehicles</li></ul></div></div></span></div>
+    </div>
+    <div id="keysmanagement" class="panel panel-dark panel-scale" style="display:none;width:760px">
+        <div class="panel-header">
+            <div>Keys Management</div>
+            <hr>
+        </div>
+        <div style="text-align:justify"><span><div class="split-left"><h1 style="text-align:center">Keys Management</h1><ul><li>You can give keys to other people in order to let them use your house and garage.</li><li><span class="btn btn-default" id="keyButton">Give access</span>
+            <input type="text" placeholder="Name_Surname" id="keyName">
+            </li>
+            </ul>
+        </div>
+        <div class="split-right">
+            <h1 style="text-align:center">Key Owners</h1>
+            <div style="overflow-y:scroll;max-height:230px">
+                <ul id="keyOwners">
+                    <li style="text-align:center">No one else has keys</li>
+                </ul>
+            </div>
+        </div>
+        </span>
+    </div>
+    </div>
+    </div>
+    <script src="js/Libraries/jquery-3.1.1.min.js"></script>
+    <script src="js/eclipse-dark.js"></script>
+    <script src="js/house.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+
+<div style="width: 100%; height: 7%; float: left;">
+    <div style="margin: 0 0; float: left; ">
+        <div  style="float: left;"> 
+            Name:
+        </div>
+        <div class="searchbar" style="width: 250px">
+            <input id="personInput" class="search_input" type="text" name="" placeholder="Search...">
+            <a class="search_icon" onclick="searchPerson()"><i class="fa fa-search"></i></a>
+        </div>
+    </div>
+    <div style="margin: 0 2%; float: left;">
+            <div  style="float: left;"> 
+                Plate:
+            </div>
+            <div class="searchbar" style="width: 200px">
+                <input id="plateInput" class="search_input" type="text" name="" placeholder="Search...">
+                <a class="search_icon" onclick="searchVehicle()"><i class="fa fa-search"></i></a>
+            </div>
+        </div>
+</div>
+<div id="wantedWarning" class="alarm Invalid" onclick="showWanted()" >Wanted!!</div>
+<div id="personContentID" style="width: 100%; height: 91%; overflow: auto; float: left;">
+    <div style="width: 100%; height: 37%; padding: 0 1%; overflow: auto; float: left;">
+        <div class="searchIndvPhoto">
+            <img src="imgs/User.png" alt="">
+        </div>
+        <div class="searchIndvDetails">
+            <div  class="searchIndvProperty">
+                <div>Name:</div>
+                <div>Arnold Williams</div>
+            </div>
+            <div  class="searchIndvProperty">
+                <div>Date of Birth:</div>
+                <div>20/2/2019</div>
+            </div>
+            <div  class="searchIndvProperty">
+                <div>Age:</div>
+                <div>20</div>
+            </div>
+            <div  class="searchIndvProperty">
+                <div>Phone Number:</div>
+                <div>2955825</div>
+            </div>
+            <div  class="searchIndvProperty">
+                <div>Nationality:</div>
+                <div class="editable">Costarrican</div>
+            </div>
+            <div  class="searchIndvProperty">
+                <div>Hair Color:</div>
+                <div class="editable">Black</div>
+            </div>
+            <div  class="searchIndvProperty">
+                <div>Skin Color:</div>
+                <div class="editable">White</div>
+            </div>
+            <div  class="searchIndvProperty">
+                <div>Eye Color:</div>
+                <div class="editable">Blue</div>
+            </div>
+        </div>
+        <div class="searchIndvDetails">
+            <div  class="searchIndvProperty">
+                <div>Driver License:</div>
+                <div class="Invalid">Invalid</div>
+                <div>Suspended til (22/3/2019)</div>
+            </div>
+            <div  class="searchIndvProperty">
+                <div>Truck License:</div>
+                <div class="Valid">Valid</div>
+            </div>
+            <!-- <div  class="searchIndvProperty">
+                <div>Captain License:</div>
+                <div class="Valid">Valid</div>
+            </div>
+            <div  class="searchIndvProperty">
+                <div>Pilot License:</div>
+                <div class="Valid">Valid</div>
+            </div> -->
+            <div  class="searchIndvProperty">
+                <div> Weapons License:</div>
+                <div class="Valid"><b>Valid</b></div>
+            </div>
+            <div  class="divisory">
+            </div>
+            <div  class="searchIndvProperty">
+                <div> Mugshot & Fingerprints</div>
+                <br>
+                <div class="Invalid editable"> Not Taken </div>
+            </div>
+        </div>
+        <div class="searchIndvDetails">
+                Additional Information:
+        <hr>
+        <textarea class="form-control" rows="6"></textarea>
+        </div>
+    </div>
+    <div class="list3Container">
+        <div id="chargesPlayer">
+            RECORD
+            <hr>
+            <div style="padding-bottom: 1vw; border-bottom: 1px solid white;">
+                <p>Date</p>
+                <p>Code</p>
+                <p>Charge</p>
+                <p>Officer</p>
+            </div>   
+            <div class="listCharges">
+                    <div>
+                            <p>06/03/2019 13:00:33</p>
+                            <p>VF006</p>
+                            <p>Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more</p>
+                            <p>Arnold Williams</p>
+                        </div>   
+                        <div>
+                            <p>06/03/2019 13:00:33</p>
+                            <p>VF006</p>
+                            <p>Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more</p>
+                            <p>Arnold Williams</p>
+                        </div>   
+                        <div>
+                            <p>06/03/2019 13:00:33</p>
+                            <p>VF006</p>
+                            <p>Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more</p>
+                            <p>Arnold Williams</p>
+                        </div>
+                        <div>
+                            <p>06/03/2019 13:00:33</p>
+                            <p>VF006</p>
+                            <p>Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more</p>
+                            <p>Arnold Williams</p>
+                        </div>
+                        <div>
+                            <p>06/03/2019 13:00:33</p>
+                            <p>VF006</p>
+                            <p>Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more</p>
+                            <p>Arnold Williams</p>
+                        </div>
+                        <div>
+                            <p>06/03/2019 13:00:33</p>
+                            <p>VF006</p>
+                            <p>Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more</p>
+                            <p>Arnold Williams</p>
+                        </div>
+                        <div>
+                            <p>06/03/2019 13:00:33</p>
+                            <p>VF006</p>
+                            <p>Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more</p>
+                            <p>Arnold Williams</p>
+                        </div>
+            </div>
+            
+        </div>
+        <div class="list3" id="listVehicles">Vehicles<hr>
+            <div style="padding-bottom: 1vw; border-bottom: 1px solid white;">
+                    <p>Status</p>
+                    <p>Plate</p>
+                    <p>Vehicle</p>
+                </div>   
+                <div class="ClistVehicles">
+                        <div>
+                            <p class="Invalid">Stolen</p>
+                            <p>VF006</p>
+                            <p>Shafter V12</p>
+                        </div> 
+                        <div>
+                            <p class="Valid">Valid</p>
+                            <p>VF006</p>
+                            <p>Shafter V12</p>
+                        </div> 
+                        <div>
+                            <p class="">Warning</p>
+                            <p>VF006</p>
+                            <p>Shafter V12</p>
+                        </div> 
+                        <div>
+                            <p class="Invalid">Stolen</p>
+                            <p>VF006</p>
+                            <p>Shafter V12</p>
+                        </div> 
+                        <div>
+                            <p class="Valid">Valid</p>
+                            <p>VF006</p>
+                            <p>Shafter V12</p>
+                        </div> 
+                        <div>
+                            <p class="">Warning</p>
+                            <p>VF006</p>
+                            <p>Shafter V12</p>
+                        </div> 
+                </div>
+            </div>
+        <div class="list3" id="listProperties">Properties<hr>
+            <div class="ClistProperties">
+                <div>DroveRoad #3</div> 
+                <div>DroveRoad #3</div>
+            </div>
+        </div>
+        <div class="list3" id="listfire">Firearms<hr>
+            <div style="padding-bottom: 1vw; border-bottom: 1px solid white;">
+                    <p>Status</p>
+                    <p>Serial</p>
+                    <p>Name</p>
+                </div> 
+            <div class="ClistFire">
+                <div>
+                    <p class="Invalid">Stolen</p>
+                    <p>234w4rjwhfrjh23sdfsdfsdf2</p> 
+                    <p>Heavy Pistol</p>
+                </div>
+                <div>
+                    <p class="Valid">Valid</p>
+                    <p>234w4rjwhfrjh23sdfsdfsdf2</p> 
+                    <p>Heavy Pistol</p>
+                </div>
+                <div>
+                    <p class="">Expired</p>
+                    <p>234w4rjwhfrjh23sdfsdfsdf2</p> 
+                    <p>Heavy Pistol</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="vehicleContentID"  style="width: 100%; height: 85%; overflow: auto; float: left;" hidden>
+    <div style="width: 100%; height: 50%; padding: 1%; overflow: auto; float: left;">
+            <div class="vehiclePhoto" id="vehiclePhotoID">
+                <img src="imgs/vehicles/164px-Chino.png" alt="">
+            </div>
+            <div class="searchIndvDetails">
+                <div  class="searchIndvProperty">
+                    <div>License plate:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="searchIndvProperty">
+                    <div>R/O:</div>
+                    <div class="clicklabe">Arnold Williams</div>
+                </div>
+                <div  class="searchIndvProperty">
+                        <div>Vin Number:</div>
+                        <div>234sdf34tgawf34dssf</div>
+                    </div>
+                <div  class="searchIndvProperty">
+                    <div>Primary Color:</div>
+                    <div class="colorDisplay" id="vehColor1"></div>
+                </div>
+                <div  class="searchIndvProperty">
+                    <div>Secundary Color:</div>
+                    <div class="colorDisplay" id="vehColor2"></div>
+                </div>
+                
+                <div  class="searchIndvProperty">
+                    <div>Manufacturer:</div>
+                    <div>Vapid</div>
+                </div>
+                <div  class="searchIndvProperty">
+                    <div>Model:</div>
+                    <div>Furios</div>
+                </div>
+            </div>
+            <div class="searchIndvDetails">
+                <div  class="searchIndvProperty">
+                    <div>Status:</div>
+                    <div>At Morse Insurance</div>
+                </div>
+                <div  class="searchIndvProperty">
+                    <div>BOLO:</div>
+                    <div class="Invalid">WANTED</div>
+                </div>
+                <div  class="searchIndvProperty">
+                    <div>Insurance:</div>
+                    <div class="Valid">Valid</div>
+                </div>
+                <div  class="searchIndvProperty">
+                    <div>Registration:</div>
+                    <div class="Invalid">Invalid</div>
+                </div>
+                <div  class="searchIndvProperty">
+                        <button type="button" class="btn btn-success" style="font-size: 1vh; width: 40%">Recovered</button>
+                        <button type="button" class="btn btn-danger" style="font-size: 1vh; width: 50%; float: right;">Report Stolen</button>
+                </div>
+            </div>
+            <div class="searchIndvDetails">
+                Additional Information:
+                <hr>
+                <textarea class="form-control" rows="7"></textarea>
+            </div>
+    </div>
+</div>

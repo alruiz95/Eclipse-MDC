@@ -55,31 +55,35 @@ body{
     height: 70%;
 }
 
+
 .amount {
     float: right;
     height: 100%;
-    padding: 0 5%;
-    font-size: 1vw;
-    background: rgba(14, 53, 90, 0.473)
+    padding: 0 8%;
+    font-size: inherit; 
+    background: rgb(15, 61, 104)
 }
 
 .blackTheme{
-    background-color: rgba(53, 53, 53, 0.733);
-    color: azure;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    /* text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour 
+  -moz-text-shadow: 0 0 2px #000;
+  -webkit-text-shadow: 0 0 2px #000; */
 }
 
 .whiteTheme{
-    background-color: rgba(236, 236, 236, 0.507);
-    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(31, 31, 31);
 }
 
 .mdcContent {
     font-family:"msu1";
-    width: 80%;
-    height: 80%;
+    width: 65%;
+    height: 70%;
     position: absolute;
     top: 55%;
-    left: 60%;
+    left: 67%;
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-color: black;
@@ -87,6 +91,7 @@ body{
     overflow: hidden;
     min-width: 750px;
     min-height: 430px;
+    
 }
 
 .header {
@@ -97,6 +102,9 @@ body{
     font-size: 2.3vh;
     text-align: center;
     cursor: move;
+    text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+  -moz-text-shadow: 0 0 2px #000;
+  -webkit-text-shadow: 0 0 2px #000;
 }
 
 .header .topbar{
@@ -122,22 +130,33 @@ body{
     width: 12%;
     text-align: center;
     float: left;
-    Background-color: rgba(46, 46, 46, 0.562);
+   
+    overflow-y: auto;
+}
+
+.darkBackground{
+    background: #222;
+}
+.whiteBackground{
+    background: rgb(121, 121, 121);
 }
 
 .leftMenu .option {
-    height: 35px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-bottom: 1px solid #363636;
+    /* height: 32px;
     width: 98%;
     background-color: rgb(29, 110, 186);
     color: azure;
-    font-size: 2vh;
+    margin: 1%;
+    border-radius: 2em / 5em;
+    */
+    font-size: 1.3vh;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 1%;
-
     text-align: center;
     vertical-align: middle;
-    line-height: 200%; 
 }
 
 
@@ -146,12 +165,12 @@ body{
     height: 2%;
     width: 98%;
     margin: 2%;
+    border-bottom: 1px solid #363636;
 }
 
 
 .leftMenu .option:hover {
-    background-color: #0E355A;
-    cursor: pointer;
+    background: #363636;
 }
 
 .leftMenu .option:active{
@@ -160,7 +179,7 @@ body{
 
 .InnerContent {
     float: left;
-    height: 100%;
+    height: calc(100% - 15px);
     width: 88%;
 }
 
@@ -210,28 +229,69 @@ body{
 }
 
 .status {
-    height: 10%;
+    height: 5%;
     width: 100%;
 }
 
 
 .status .option {
-    height: 50%;
+    height: 80%;
     background-color: rgb(29, 110, 186);
     color: azure;
-    font-size: 1.6vh;
+    font-size: 1.3vh;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 1%;
-    padding: 0 35px;
+    margin: 0.23% 0.5%;
+    padding: 0 5%;
     float: left;
     text-align: center;
     vertical-align: middle;
     line-height: 200%; 
     z-index: 100;
+    border-radius: 2em / 5em;
 }
 
+.searchbar{
+    font-size: 1.6vh;
+    height: 5%;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 2px;
+    margin-left: 4px;
+    float: left;
+    padding: 0 10px;
+    width: 450px;
+    margin-bottom: 0.5%
+}
 
+.search_input{
+    float: left;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 85%;
+    font-size: 1.6vh;
+    color: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+}
+::placeholder { /* Most modern browsers support this now. */
+    color:    rgb(99, 99, 99);
+ }
+
+.search_icon{
+    float: left;
+    height: 12%;
+    width: 20px;
+    float: right;
+    padding-left: 3px;
+    border-radius: 50%;
+    color: inherit;
+}
+
+.search_icon:active{
+    color: #0E355A;
+    background-color: rgb(0, 85, 165);
+}
 
 .status .divisory {
     width: 2%;
@@ -250,13 +310,13 @@ body{
     background-color: rgb(2, 11, 20);
 }
 
-.mdcContentMain{
+#mdcContentMain{
     height: 90%;
     width: 100%;
 }
 
 .active{
-
+    border-left: 3px solid #21CCFC;
 }
 
 
@@ -286,7 +346,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: rgb(168, 168, 168);
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -296,8 +356,8 @@ body{
     content: "";
     height: 1vh;
     width: 1vh;
-    left: 4px;
-    bottom: 3px;
+    left: 3px;
+    bottom: 2.5px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
@@ -329,7 +389,6 @@ body{
   .leftMenu .unitStat {
     height: 25px;
     width: 12%;
-    background-color: rgba(27, 27, 27, 0.356);
     font-size: 1.5vh;
     overflow: visible;
     text-overflow: ellipsis;
@@ -373,4 +432,285 @@ body{
     right: 15px;
     bottom: 0;
     font-family: monospace;
+}
+
+/* ======== Search =========== */
+
+.searchIndvPhoto{
+    float: left;
+    height: 150px;
+    width: 150px;
+    background-image: url("imgs/mugshot.jpg") ;
+    background-color: #cccccc;
+    margin-right: 20px;
+    margin-top: 5px;
+    border-radius: 5%;
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.searchIndvPhoto img{
+    height: inherit;
+    width: inherit;
+    border-radius: 5%;
+}
+
+.vehiclePhoto{
+    float: left;
+    height: 140px;
+    width: 220px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 5%;
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.vehiclePhoto img{
+    height: inherit;
+    width: inherit;
+    border-radius: 5%;
+}
+
+.searchIndvDetails{
+    float: left;
+    width: 250px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    padding: 1%;
+    font-size: 0.6vw;
+}
+
+.searchIndvDetails .divisory{
+    float: left;
+    height: 10px;
+    width: 98%;
+}
+.searchIndvDetails textarea{
+    float: left;
+    width: 100%;
+    font-size: 1vh;
+    margin-top:5px;
+    
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.searchIndvProperty{
+    float: left;
+    width: 100%;
+}
+.searchIndvProperty div:nth-child(1) {
+    float: left;
+}
+.searchIndvProperty div:nth-child(2) {
+    font-family: Arial, Helvetica, sans-serif;
+    float: right;
+}
+.searchIndvProperty div:nth-child(3) {
+    float: left;
+    width: inherit;
+    padding-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.editable:hover{
+    border-radius: 6px;
+    background-color: #1D6EBA;
+    color: aliceblue;
+    cursor: pointer;
+    padding: 0% 10%;
+}
+.clicklabe:hover{
+    border-radius: 6px;
+    background-color: #1D6EBA;
+    color: aliceblue;
+    cursor: pointer;
+    padding: 0% 5%;
+}
+.Valid{
+    color: darkgreen;
+}
+.Invalid{
+    color: rgb(187, 0, 0);
+}
+.alarm{
+    width: 100%;
+    height: 3vh;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100%; 
+    background-color: #1D6EBA;
+    font-size: 3vh;
+    float: left;
+}
+
+.list3Container{
+    width: 98%; 
+    height: 63%;
+    float: left;
+    margin: 0% 1%; 
+    font-size: 0.7vw;
+}
+
+.list3Container .list3 {
+    width: 20vw; 
+    float: left; 
+}
+
+#chargesPlayer{
+    width: 32vw; 
+    float: left; 
+    margin: 0 0.5%;
+    height: 95%;
+}
+
+#chargesPlayer .listCharges{
+    height: calc(100% - 1.4vw);
+    overflow-y: scroll;
+}
+
+#chargesPlayer .listCharges div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    float: left;
+    border-bottom: 1px dotted white;
+}
+
+/* #chargesPlayer .listCharges div:hover{
+    background: #363636;
+} */
+
+#chargesPlayer div p{
+    float: left;
+    padding: 0;
+    margin: 0;
+    
+}
+#chargesPlayer div p:nth-child(1){
+    width: 15%;
+}
+#chargesPlayer div p:nth-child(2){
+    width: 10%;
+}
+#chargesPlayer div p:nth-child(3){
+    width: 55%;
+}
+#chargesPlayer div p:nth-child(4){
+    width: 20%;
+}
+
+
+#listVehicles{
+    height: 40%;
+}
+
+#listVehicles div p{
+    float: left;
+    padding: 0;
+    margin: 0;
+    
+}
+
+#listVehicles .ClistVehicles div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    float: left;
+    border-bottom: 1px dotted white;
+    cursor: pointer;
+}
+
+
+#listVehicles .ClistVehicles{
+    height: calc(100% - 2vw);
+    overflow-y: scroll;
+}
+
+
+#listVehicles .ClistVehicles div:hover{
+    background: #363636;
+}
+#listVehicles div p:nth-child(1){
+    width: 20%;
+}
+#listVehicles div p:nth-child(2){
+    width: 20%;
+}
+#listVehicles div p:nth-child(3){
+    width: 60%;
+}
+
+
+#listProperties{
+    height: 25%;
+}
+#listProperties .ClistProperties{
+    height: calc(100% - 1vw);
+    overflow-y: scroll;
+}
+
+#listProperties .ClistProperties div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    float: left;
+    border-bottom: 1px dotted white;
+}
+
+#listfire{
+    height: 35%;
+}
+#listfire .ClistFire{
+    height: calc(100% - 2.3vw);
+    overflow-y: scroll;
+}
+
+#listfire div p{
+    float: left;
+    padding: 0;
+    margin: 0;
+    
+}
+#listfire .ClistFire div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    float: left;
+    cursor: pointer;
+    border-bottom: 1px dotted white;
+}
+
+#listfire .ClistFire div:hover{
+    background: #363636;
+}
+#listfire div p:nth-child(1){
+    width: 20%;
+}
+#listfire div p:nth-child(2){
+    width: 50%;
+}
+#listfire div p:nth-child(3){
+    width: 30%;
+}
+
+
+ hr {
+    border: 1px solid rgb(29, 110, 186);
+    border-radius: 1px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+  } 
+
+.colorDisplay{
+    height:  0.6vw;
+    width: 35%;
+    border-radius: 0.6vw;
+    border: 1px solid #cccccc;
+}
+
+#vehColor1{
+    background-color: rgb(0, 85, 165);
+}
+
+#vehColor2{
+    background-color: rgb(0, 0, 0);
 }
