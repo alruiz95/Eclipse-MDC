@@ -8,6 +8,7 @@ var CompleteMDCid="CompleteMDC";
 var lefrMenuId="leftMenuID";
 var IdDarkCheckBox = "darkCheckBox";
 var IdInnerMDC = "mdcContentMain";
+var callsBoxID = "idCallsBox";
 
 var PersonContent = "personContentID";
 var VehicleContent = "vehicleContentID";
@@ -28,11 +29,41 @@ function onLoad(){
         document.getElementById(IdDarkCheckBox).checked = false;
         localStorage.setItem('darkTheme', false);
     }
+    var div = document.getElementById (callsBoxID);
+    if (div.addEventListener) {
+        div.addEventListener ('overflow', OnOverflowChanged, false);
+    }
 
-    dragElement(document.getElementById("CompleteMDC"),document.getElementById("mainHeader"));
+    dragElement(document.getElementById(CompleteMDCid),document.getElementById("mainHeader"));
+    dragElement(document.getElementById("idRadar"),document.getElementById("idMainRadar"));
     jQuery("#LSPDHead").fitText();
     jQuery("#MDCHead").fitText();
-    clickMenuOption("search");
+    clickMenuOption("home");
+}
+
+function OnOverflowChanged (event) {
+  var objDiv = document.getElementById(callsBoxID);
+  
+  if (event.type == "overflow") {
+    switch (event.detail) {
+      case 0:
+          objDiv.scrollTop = objDiv.scrollHeight;
+          objDiv.style.marginRight = "-17px";
+          break;
+    }
+  }
+}
+
+function clipboardPlate(str){
+  str = str.trim();
+  var el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style = {position: 'absolute', left: '-9999px'};
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
 }
 
 function clickMenuOption(option){
@@ -138,6 +169,20 @@ function dragElement(elmnt, clickElmnt) {
     document.getElementById(VehicleContent).hidden = true;
   }
 
+  function toggleMDC(){
+    if (document.getElementById(CompleteMDCid).hidden){
+      document.getElementById(CompleteMDCid).hidden = false;
+    }else{
+      document.getElementById(CompleteMDCid).hidden = true;
+    }
+  }
+
+  function unhideMDCHome(){
+    if (document.getElementById(CompleteMDCid).hidden){
+      document.getElementById(CompleteMDCid).hidden = false;
+      clickMenuOption("home");
+    }
+  }
 
   ///////////////////////////////=================== JQUERRY
   (function( $ ){

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Staatliches');
 html, body {
     margin: 0;
     height: 100%;
@@ -25,6 +26,17 @@ body{
     font-family: "msu1";
     src: url(font/msu1.ttf);
 }
+
+@font-face {
+    font-family: "roboto";
+    src: url(font/Roboto.ttf);
+}
+
+@font-face {
+    font-family: "digital";
+    src: url(font/digital-7.ttf);
+}
+
 
 #logo {
     position: absolute;
@@ -78,11 +90,12 @@ body{
 }
 
 .mdcContent {
-    font-family:"msu1";
+    font-family: 'Staatliches', sans-serif;
+    letter-spacing: 1px;
     width: 65%;
     height: 70%;
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 67%;
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -91,10 +104,14 @@ body{
     overflow: hidden;
     min-width: 750px;
     min-height: 430px;
-    
+    z-index: 10;
 }
 
+
+
+
 .header {
+    font-family:"msu1";
     width: 100%;
     height: 10%;
     background-color: antiquewhite;
@@ -128,9 +145,8 @@ body{
 .leftMenu {
     height: 100%;
     width: 12%;
-    text-align: center;
+    text-align: left;
     float: left;
-   
     overflow-y: auto;
 }
 
@@ -143,7 +159,7 @@ body{
 
 .leftMenu .option {
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 5px 20px;
     border-bottom: 1px solid #363636;
     /* height: 32px;
     width: 98%;
@@ -155,7 +171,6 @@ body{
     font-size: 1.3vh;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-align: center;
     vertical-align: middle;
 }
 
@@ -313,10 +328,14 @@ body{
 #mdcContentMain{
     height: 90%;
     width: 100%;
+    letter-spacing: 0;
 }
 
 .active{
     border-left: 3px solid #21CCFC;
+}
+.noActive{
+    margin-left: 3px;
 }
 
 
@@ -432,6 +451,121 @@ body{
     right: 15px;
     bottom: 0;
     font-family: monospace;
+}
+
+/* ======= Home ============== */
+.topHomeColumn{
+    margin: 0 1%;
+    float: left;
+    height: 100%;
+    
+    font-size: 1.2vh;
+}
+h3{
+    font-size: 2vh;
+}
+
+
+#r911{
+    width: 60%;
+}
+#r911 div:first-of-type{
+    margin-right: 20px;
+}
+#r911 .topRow{
+    height: calc(100% - 6vh);
+    overflow-y: scroll;
+}
+#r911 div p{
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+#r911 .topRow div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    float: left;
+    border-bottom: 1px dotted white;
+}
+#r911 div p:nth-child(1){
+    width: 10%;
+    text-align: center;
+}
+#r911 div p:nth-child(1) i{
+    width: 3vw;
+    height: 1vw;
+    border-radius: 0.5vw;
+    padding-top: 0.1vw;
+    font-size: 0.8vw;
+}
+#r911 div p:nth-child(2){
+    width: 8%;
+}
+#r911 div p:nth-child(3){
+    width: 5%;
+}
+#r911 div p:nth-child(4){
+    width: 15%;
+}
+#r911 div p:nth-child(5){
+    width: 42%;
+}
+#r911 div p:nth-child(6){
+    width: 20%;
+}
+#r911 div p:nth-child(6) i{
+    width: 33%;
+    height: 1vw;
+    padding-top: 0.1vw;
+    font-size: 1vw;
+    font-size: 0.8vw;
+    float: right;
+}
+
+
+#backup{
+    width: 35%;
+}
+#backup div:first-of-type{
+    margin-right: 20px;
+}
+#backup .topRow{
+    height: calc(100% - 6vh);
+    overflow-y: scroll;
+}
+#backup div p{
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+#backup .topRow div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    float: left;
+    border-bottom: 1px dotted white;
+}
+#backup div p:nth-child(1){
+    width: 10%;
+    text-align: center;
+}
+#backup div p:nth-child(2){
+    width: 8%;
+}
+#backup div p:nth-child(3){
+    width: 5%;
+}
+#backup div p:nth-child(4){
+    width: 15%;
+}
+#backup div p:nth-child(5){
+    width: 37%;
+}
+#backup div p:nth-child(6){
+    width: 25%;
+}
+#backup div p:nth-child(6) i{
+    height: 1vw;
+    padding-top: 0.2vw;
 }
 
 /* ======== Search =========== */
@@ -610,7 +744,6 @@ body{
     float: left;
     padding: 0;
     margin: 0;
-    
 }
 
 #listVehicles .ClistVehicles div {
@@ -713,4 +846,237 @@ body{
 
 #vehColor2{
     background-color: rgb(0, 0, 0);
+}
+
+
+/* =========================================================================== Mini MDC */
+
+.miniMDC {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 1.3vh;
+    letter-spacing: 1px;
+    width: 40%;
+    height:  100%;
+    position: absolute;
+    right: 1%;
+    overflow-x: hidden;
+    /* right: 0;
+    bottom: 100px; */  
+}
+.miniMDC .outer { 
+    position:   absolute; 
+    bottom: 100px; 
+    right: 0;  
+    width: 100%;
+    height: 80px;
+}
+.miniMDC .callsBox { 
+    position:  absolute; 
+    bottom: 180px; 
+    right: 0;  
+    width: 100%;
+    max-height: 20%;    
+    overflow-y: auto;
+}
+
+.miniMDC .outer .unit{
+    height: 2vh;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    float: right;
+    margin: 3px 3px;
+    overflow: visible;
+    padding-left: 10px;
+}
+.miniStatus{
+    width: 8px;
+    height: 100%;
+    float: right;
+    border-radius: 0 5px 5px 0;
+    margin-left: 5px;
+}
+
+.miniMDC .callsBox .call{
+    height: 2vh;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    float: right;
+    min-width: 55%;
+    margin: 3px 3px;
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.miniMDC .callsBox .call i{
+
+    padding-top: 0.5vh;
+}
+
+.miniMDC .call .callType{
+    width: 20px;
+    height: 100%;
+    float: left;
+    border-radius: 5px 0 0 5px ;
+    margin-right: 5px;
+    text-align: center;
+    
+}
+
+.police{
+    background-color: #1D6EBA;
+}
+.medic{
+    background-color: rgb(177, 112, 16);
+}
+.both{
+    background-color: rgb(177, 16, 16);
+}
+
+.miniMDC .call .description{
+    height: 100%;
+    width:  calc(100% - 115px);
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+.miniMDC .call .description:hover{
+    background-color: rgba(19, 19, 19, 0.884);
+}
+
+.setcall{
+    width: 30px;
+    height: 100%;
+    float: right;
+    background-color: rgb(121, 109, 4);
+    font-size: 1.3vh;
+    text-align: center;
+    cursor: pointer;
+}
+
+ .setcall:hover{
+    background-color: rgb(66, 60, 6);
+}
+
+.responce{
+    width: 30px;
+    height: 100%;
+    float: right;
+    background-color: rgb(17, 90, 14);
+    font-size: 1.3vh;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.responce:hover{
+    background-color: rgb(7, 53, 6);
+}
+
+.closeCall{
+    width: 30px;
+    height: 100%;
+    float: right;
+    background-color: rgb(121, 4, 4);
+    font-size: 1.3vh;
+    text-align: center;
+    cursor: pointer;
+}
+.closeCall:hover{
+    background-color: rgb(66, 6, 6);
+}
+/* =========================================================================== Radar MDC */
+.radar {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 1.3vh;
+    letter-spacing: 1px;
+    width: 15%;
+    height: 30%;
+    position: absolute;
+    left: 1% ;
+    bottom: calc(45% - 3vh);
+    color: white;
+    
+}
+
+.mainRadar{
+    width: 100%;
+    cursor: move;
+    height: 7vh;
+    
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px 20px 0 0 ;
+}
+
+.mainRadar .numberDiv{
+    width: 33%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+
+.mainRadar .numberTitle{
+    width: 100%;
+    height: 25%;
+    float: left;
+    background-color: #222;
+}
+
+
+.mainRadar .number{
+    width: 100%;
+    height: 75%;
+    float: left;
+    font-family: "digital";
+    margin-top: -1vh;
+    font-size: 4.5vh;
+}
+.mainRadar div:first-of-type .numberTitle{
+    border-radius: 20px 0 0 0 ;
+}
+
+.mainRadar div:last-of-type .numberTitle{
+    border-radius: 0 20px 0 0 ;
+}
+.vehDescription{
+    width: 100%;
+    height: 1.3vw;
+    font-size: 0.7vw;
+    text-align: center;
+}
+
+.vehDescription .vehName{
+    float: left;
+    padding-top: 0.1vw;
+    width: 34%;
+    
+}
+
+.vehDescription .vehPlate{
+    float: left;
+    padding-top: 0.1vw;
+    width: 33%;
+}
+
+.vehDescription .copy{
+    float: left;
+    padding-top: 5px;
+    width: 33%;
+    height: 100%;
+    background-color: rgba(18, 89, 155, 0.295);
+    cursor: pointer;
+}
+
+.vehDescription .copy:hover{
+    background-color: rgb(12, 115, 211);
+}
+
+.vehicles{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 20px 20px;
+}
+.vehicles div:last-child .copy{
+    border-radius: 0 0 20px 0;
 }

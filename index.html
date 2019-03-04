@@ -15,20 +15,20 @@
                 integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
                 crossorigin="anonymous"></script>
 
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
             <script src="scriptMDC.js"></script>
             <link rel="stylesheet" href="styleMDC.css">
             <meta charset="UTF-8"> 
     </head>
     <body onload="onLoad();">
-        <div id="CompleteMDC" class="mdcContent whiteTheme">
+        <div id="CompleteMDC" class="mdcContent whiteTheme" >
 
             <div id="mainHeader" class="header">
                 <div id="logo"><img src="./imgs/logo.png"></div>
                 
                 <div  class="topbar">
-                        <div id="close"><i style="float: left; width: 100%;" class="fa fa-times"></i> <div style="float: left; font-size: 0.6vh; width: 100%;">(ESC to Close)</div></div>
+                        <div id="close" onclick="toggleMDC()"><i style="float: left; width: 100%;" class="fa fa-times"></i> <div style="float: left; font-size: 0.6vh; width: 100%;">(ESC to Close)</div></div>
                         <div style="font-weight: 100%;">Los Santos Police Department</div> 
                 </div>
                 <div  class="bottonBar">
@@ -48,17 +48,17 @@
             <div class="content">
 
                 <div class="leftMenu darkBackground" id="leftMenuID">
-                    <div class="option" onclick='clickMenuOption("home")'>Home</div>
+                    <div class="option noActive" onclick='clickMenuOption("home")'>Home</div>
                     <div class="option active" onclick='clickMenuOption("search")'>Search</div>
-                    <div class="option" onclick='clickMenuOption("home")'>Reports</div>
-                    <div class="option" onclick='clickMenuOption("home")'>Warrants<div class="amount">2</div></div>
-                    <div class="option" onclick='clickMenuOption("home")'>Units<div class="amount">50</div></div>
-                    <div class="option" onclick='clickMenuOption("home")'>Dispatch</div>
+                    <div class="option noActive" onclick='clickMenuOption("home")'>Reports</div>
+                    <div class="option noActive" onclick='clickMenuOption("home")'>Warrants<div class="amount">2</div></div>
+                    <div class="option noActive" onclick='clickMenuOption("home")'>Units<div class="amount">50</div></div>
+                    <div class="option noActive" onclick='clickMenuOption("home")'>Dispatch</div>
                     <div class="divisory"></div>
-                    <div class="option" onclick='clickMenuOption("home")'>10 Codes</div>
-                    <div class="option" onclick='clickMenuOption("notepad")'>Notepad</div>
-                    <div class="option" onclick='showWanted()'>Penal Code</div>
-                    <div class="option" onclick='clickMenuOption("home")'>Administrator</div>
+                    <div class="option noActive" onclick='clickMenuOption("home")'>10 Codes</div>
+                    <div class="option noActive" onclick='clickMenuOption("notepad")'>Notepad</div>
+                    <div class="option noActive" onclick='showWanted()'>Penal Code</div>
+                    <div class="option noActive" onclick='clickMenuOption("home")'>Administrator</div>
                     <div class="unitStat">22-L-18<div id="unitStatus" class="unitStatus unavailable"></div> </div>
                 </div>
                 <div class="InnerContent">
@@ -74,6 +74,104 @@
                 </div>
             </div>
             <div id="CopyRights">LSPD Mobile Data Computer CopyRights © 2019 ((Eclipse Role Play www.eclipse-rp.net))</div>
+        </div>
+
+        <div class="miniMDC">
+            <div id="idCallsBox" class="callsBox">
+                <div class="call">
+                    <div class="callType both"><i class="fas fa-phone"></i></div>
+                    <div class="description" onclick="unhideMDCHome()">There's a shootout and people are hurt</div>
+                    <i class="fas fa-sign-in-alt responce"></i>
+                    <i class="fas fa-location-arrow setcall"></i>
+                    <i class="fas fa-times closeCall"></i>
+                </div>
+                <div class="call">
+                    <div class="callType medic"><i class="fas fa-phone"></i></div>
+                    <div class="description" onclick="unhideMDCHome()">I just hit a pole, need help </div>
+                    <i class="fas fa-sign-in-alt responce"></i>
+                    <i class="fas fa-location-arrow setcall"></i>
+                    <i class="fas fa-times closeCall"></i>
+                </div>
+                <div class="call">
+                    <div class="callType police"><i class="fas fa-phone"></i></div>
+                    <div class="description" onclick="unhideMDCHome()">My car just broke down and now i need a fucking ride to this call ssomsm dfg sdfg fdg </div>
+                    <i class="fas fa-sign-in-alt responce"></i>
+                    <i class="fas fa-location-arrow setcall"></i>
+                    <i class="fas fa-times closeCall"></i>
+                </div>
+            </div>
+            <div class="outer">
+                <div class="unit">STAFF-3<div class="miniStatus unavailable"></div></div>
+                <div class="unit">22-L-18<div class="miniStatus available"></div></div>
+                <div class="unit">11-L-14<div class="miniStatus responding"></div></div>
+                <div class="unit">11-S-10<div class="miniStatus onscene"></div></div>
+                <div class="unit">STAFF-1<div class="miniStatus unavailable"></div></div>
+                <div class="unit">22-L-18<div class="miniStatus available"></div></div>
+                <div class="unit">11-L-14<div class="miniStatus available"></div></div>
+                <div class="unit">11-S-10<div class="miniStatus available"></div></div>
+                <div class="unit">STAFF-3<div class="miniStatus available"></div></div>
+                <div class="unit">43-MARY-19<div class="miniStatus available"></div></div>
+                <div class="unit">11-L-14<div class="miniStatus available"></div></div>
+                <div class="unit">11-S-10<div class="miniStatus available"></div></div>
+            </div>
+        </div>
+        <div id="idRadar" class="radar">
+            <div id="idMainRadar" class="mainRadar">
+                <div class="numberDiv">
+                    <div class="numberTitle">
+                        Front
+                    </div>
+                    <div class="number">
+                        200
+                    </div>
+                </div>
+                <div class="numberDiv">
+                    <div class="numberTitle">
+                        Back
+                    </div>
+                    <div class="number">
+                        100
+                    </div>
+                </div>
+                <div class="numberDiv" style="width: 34%">
+                    <div class="numberTitle">
+                        Lock (Ctr J)
+                    </div>
+                    <div class="number">
+                        239
+                    </div>
+                </div>
+            </div>
+            <div class="vehicles">
+                    <div class="vehDescription">
+                        <div class="vehName">
+                            SANCHEZV_2
+                        </div>
+                        <div class="vehPlate">
+                            SDH45HSD454
+                        </div>
+                        <div class="copy" onclick="clipboardPlate('SDH45HSD454')">Copy Plate</div>  
+                    </div>
+                    <div class="vehDescription">
+                        <div class="vehName">
+                            SHAFTER_V12
+                        </div>
+                        <div class="vehPlate">
+                            YOLO
+                        </div>
+                        <div class="copy"  onclick="clipboardPlate('  YOLO  ')">Copy Plate</div>  
+                    </div>
+                    <div class="vehDescription">
+                        <div class="vehName">
+                            CONTENDER
+                        </div>
+                        <div class="vehPlate">
+                            FUCKPOL
+                        </div>
+                        <div class="copy" onclick="clipboardPlate('  FUCKPOL  ')">Copy Plate</div>  
+                    </div>
+            </div>
+           
         </div>
     </body>
 </html>
