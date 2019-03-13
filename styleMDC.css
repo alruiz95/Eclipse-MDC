@@ -5,13 +5,13 @@ html, body {
 }
 
 body{
-    background-image: url("imgs/back.png");
+    background-image: url("imgs/back.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
 
-    -webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none;      
+    -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -39,14 +39,14 @@ body{
 
 
 #logo {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    height: 25%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+    margin-bottom: 4%;
 }
 
 #logo img {
-    height: 100%;
+    width: 100%;
     z-index: 10;
 }
 
@@ -72,14 +72,14 @@ body{
     float: right;
     height: 100%;
     padding: 0 8%;
-    font-size: inherit; 
+    font-size: inherit;
     background: rgb(15, 61, 104)
 }
 
 .blackTheme{
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    /* text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour 
+    /* text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour
   -moz-text-shadow: 0 0 2px #000;
   -webkit-text-shadow: 0 0 2px #000; */
 }
@@ -127,12 +127,10 @@ body{
 .header .topbar{
     background: linear-gradient(to right, #1D6EBA , #0E355A);
     height: 50%;
-    padding-right: 20%;
 }
 .header .bottonBar{
     background: linear-gradient(to right, #0E355A , #1D6EBA);
     height: 50%;
-    padding-right: 20%;
 }
 
 
@@ -261,7 +259,7 @@ body{
     float: left;
     text-align: center;
     vertical-align: middle;
-    line-height: 200%; 
+    line-height: 200%;
     z-index: 100;
     border-radius: 2em / 5em;
 }
@@ -326,7 +324,7 @@ body{
 }
 
 #mdcContentMain{
-    height: 90%;
+    height: 95%;
     width: 100%;
     letter-spacing: 0;
 }
@@ -353,10 +351,10 @@ body{
     width: 25px;
     height: 15px;
   }
-  
+
   /* Hide default HTML checkbox */
   .switch input {display:none;}
-  
+
   /* The slider */
   .slider {
     position: absolute;
@@ -369,7 +367,7 @@ body{
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
+
   .slider:before {
     position: absolute;
     content: "";
@@ -381,26 +379,26 @@ body{
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
+
   .switchContainer input:checked + .slider {
     background-color: #2196F3;
   }
-  
+
   .switchContainer input:focus + .slider {
     box-shadow: 0 0 1px #2196F3;
   }
-  
+
   .switchContainer input:checked + .slider:before {
     -webkit-transform: translateX(1vh);
     -ms-transform: translateX(1vh);
     transform: translateX(1vh);
   }
-  
+
   /* Rounded sliders */
   .slider.round {
     border-radius: 50px;
   }
-  
+
   .slider.round:before {
     border-radius: 50%;
   }
@@ -411,14 +409,15 @@ body{
     font-size: 1.5vh;
     overflow: visible;
     text-overflow: ellipsis;
-    
+
 
     text-align: center;
     vertical-align: middle;
-    line-height: 200%; 
+    line-height: 200%;
 
     position: absolute;
     bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.192);
 }
 .leftMenu .unitStatus {
     float: left;
@@ -427,21 +426,21 @@ body{
 }
 
 .available
-{    
+{
     background-color: rgb(14, 90, 18)
 }
 
 .onscene
-{    
+{
     background-color: rgb(29, 31, 141)
 }
 
 .responding
-{    
+{
     background-color: rgb(185, 167, 0)
 }
 .unavailable
-{    
+{
     background-color: rgb(185, 0, 0)
 }
 
@@ -458,16 +457,29 @@ body{
     margin: 0 1%;
     float: left;
     height: 100%;
-    
+
     font-size: 1.2vh;
 }
 h3{
     font-size: 2vh;
 }
 
+#createButton{
+    float: right;
+    background-color: #20770f;
+    padding: 0 3%;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+#createButton:hover{
+    background-color: #134409;
+}
+#createButton:active{
+    background-color: #1c630e;
+}
 
 #r911{
-    width: 60%;
+    width: 97%;
 }
 #r911 div:first-of-type{
     margin-right: 20px;
@@ -488,30 +500,31 @@ h3{
     border-bottom: 1px dotted white;
 }
 #r911 div p:nth-child(1){
-    width: 10%;
+    width: 8%;
     text-align: center;
 }
 #r911 div p:nth-child(1) i{
     width: 3vw;
     height: 1vw;
     border-radius: 0.5vw;
-    padding-top: 0.1vw;
-    font-size: 0.8vw;
+    margin-left: calc(50% - 1.5vw);
+    /* font-size: 0.8vw; */
+    float: left;
 }
 #r911 div p:nth-child(2){
-    width: 8%;
-}
-#r911 div p:nth-child(3){
     width: 5%;
 }
+#r911 div p:nth-child(3){
+    width: 3%;
+}
 #r911 div p:nth-child(4){
-    width: 15%;
+    width: 13%;
 }
 #r911 div p:nth-child(5){
-    width: 42%;
+    width: 61%;
 }
 #r911 div p:nth-child(6){
-    width: 20%;
+    width: 10%;
 }
 #r911 div p:nth-child(6) i{
     width: 33%;
@@ -566,6 +579,50 @@ h3{
 #backup div p:nth-child(6) i{
     height: 1vw;
     padding-top: 0.2vw;
+    width: 33%;
+}
+
+#bolos{
+    width: 60%;
+}
+#bolos div:first-of-type{
+    margin-right: 20px;
+}
+#bolos .topRow{
+    height: calc(100% - 6vh);
+    overflow-y: scroll;
+}
+#bolos div p{
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+#bolos .topRow div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    float: left;
+    border-bottom: 1px dotted white;
+}
+#bolos div p:nth-child(1){
+    width: 8%;
+    text-align: center;
+}
+#bolos div p:nth-child(2){
+    width: 12%;
+}
+#bolos div p:nth-child(3){
+    width: 18%;
+}
+#bolos div p:nth-child(4){
+    width: 55%;
+}
+#bolos div p:nth-child(5){
+    width: 7%;
+}
+#bolos div p:nth-child(5) i{
+    height: 1vw;
+    padding-top: 0.2vw;
+    width: 100%;
 }
 
 /* ======== Search =========== */
@@ -576,7 +633,7 @@ h3{
     width: 150px;
     background-image: url("imgs/mugshot.jpg") ;
     background-color: #cccccc;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     margin-top: 5px;
     border-radius: 5%;
     background-position: center; /* Center the image */
@@ -595,7 +652,6 @@ h3{
     height: 140px;
     width: 220px;
     margin-right: 20px;
-    margin-bottom: 10px;
     border-radius: 5%;
     background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -610,30 +666,32 @@ h3{
 
 .searchIndvDetails{
     float: left;
-    width: 250px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    padding: 1%;
+    width: 25%;
+    /* margin-right: 0.5%; */
+    /* margin-bottom: 10px; */
+    padding: 0.5%;
     font-size: 0.6vw;
+    
 }
 
 .searchIndvDetails .divisory{
     float: left;
-    height: 10px;
+    height: 8px;
     width: 98%;
 }
 .searchIndvDetails textarea{
     float: left;
     width: 100%;
     font-size: 1vh;
-    margin-top:5px;
-    
+    margin-top:1vh;
+
     font-family: 'Courier New', Courier, monospace;
 }
 
 .searchIndvProperty{
     float: left;
     width: 100%;
+    border-bottom: 1px solid #cccccc67;
 }
 .searchIndvProperty div:nth-child(1) {
     float: left;
@@ -674,28 +732,28 @@ h3{
     height: 3vh;
     text-align: center;
     vertical-align: middle;
-    line-height: 100%; 
+    line-height: 100%;
     background-color: #1D6EBA;
     font-size: 3vh;
     float: left;
 }
 
 .list3Container{
-    width: 98%; 
+    width: 98%;
     height: 63%;
     float: left;
-    margin: 0% 1%; 
+    margin: 0% 1%;
     font-size: 0.7vw;
 }
 
 .list3Container .list3 {
-    width: 20vw; 
-    float: left; 
+    width: 20vw;
+    float: left;
 }
 
 #chargesPlayer{
-    width: 32vw; 
-    float: left; 
+    width: 35vw;
+    float: left;
     margin: 0 0.5%;
     height: 95%;
 }
@@ -720,7 +778,7 @@ h3{
     float: left;
     padding: 0;
     margin: 0;
-    
+
 }
 #chargesPlayer div p:nth-child(1){
     width: 15%;
@@ -762,7 +820,7 @@ h3{
 
 
 #listVehicles .ClistVehicles div:hover{
-    background: #363636;
+    background: #0E355A;
 }
 #listVehicles div p:nth-child(1){
     width: 20%;
@@ -802,7 +860,7 @@ h3{
     float: left;
     padding: 0;
     margin: 0;
-    
+
 }
 #listfire .ClistFire div {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -813,7 +871,7 @@ h3{
 }
 
 #listfire .ClistFire div:hover{
-    background: #363636;
+    background: #0E355A;
 }
 #listfire div p:nth-child(1){
     width: 20%;
@@ -831,7 +889,7 @@ h3{
     border-radius: 1px;
     margin-top: -1px;
     margin-bottom: -1px;
-  } 
+  }
 
 .colorDisplay{
     height:  0.6vw;
@@ -853,34 +911,35 @@ h3{
 
 .miniMDC {
     font-family: 'Staatliches', sans-serif;
-    font-size: 1.3vh;
+    font-size: 1vh;
     letter-spacing: 1px;
     width: 40%;
     height:  100%;
     position: absolute;
-    right: 1%;
+    right: 0.4%;
     overflow-x: hidden;
     /* right: 0;
-    bottom: 100px; */  
+    bottom: 100px; */
 }
-.miniMDC .outer { 
-    position:   absolute; 
-    bottom: 100px; 
-    right: 0;  
+.miniMDC .outer {
+    position:   absolute;
+    bottom: 100px;
+    right: 0;
     width: 100%;
-    height: 80px;
+    height: 70px;
 }
-.miniMDC .callsBox { 
-    position:  absolute; 
-    bottom: 180px; 
-    right: 0;  
+.miniMDC .callsBox {
+    position:  absolute;
+    bottom: 175px;
+    right: 0;
     width: 100%;
-    max-height: 20%;    
+    max-height: 20%;
     overflow-y: auto;
+    margin-right: 0;
 }
 
 .miniMDC .outer .unit{
-    height: 2vh;
+    height: 1.5vh;
     border-radius: 5px;
     background-color: #222;
     color: white;
@@ -898,7 +957,7 @@ h3{
 }
 
 .miniMDC .callsBox .call{
-    height: 2vh;
+    height: 1.5vh;
     border-radius: 5px;
     background-color: #222;
     color: white;
@@ -911,7 +970,7 @@ h3{
 
 .miniMDC .callsBox .call i{
 
-    padding-top: 0.5vh;
+    padding-top: 0.2vh;
 }
 
 .miniMDC .call .callType{
@@ -921,7 +980,7 @@ h3{
     border-radius: 5px 0 0 5px ;
     margin-right: 5px;
     text-align: center;
-    
+
 }
 
 .police{
@@ -951,7 +1010,7 @@ h3{
     height: 100%;
     float: right;
     background-color: rgb(121, 109, 4);
-    font-size: 1.3vh;
+    font-size: 1vh;
     text-align: center;
     cursor: pointer;
 }
@@ -965,7 +1024,7 @@ h3{
     height: 100%;
     float: right;
     background-color: rgb(17, 90, 14);
-    font-size: 1.3vh;
+    font-size: 1vh;
     text-align: center;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
@@ -980,7 +1039,7 @@ h3{
     height: 100%;
     float: right;
     background-color: rgb(121, 4, 4);
-    font-size: 1.3vh;
+    font-size: 1vh;
     text-align: center;
     cursor: pointer;
 }
@@ -996,16 +1055,16 @@ h3{
     height: 30%;
     position: absolute;
     left: 1% ;
-    bottom: calc(45% - 3vh);
+    bottom: calc(40% - 5vh);
     color: white;
-    
+
 }
 
 .mainRadar{
     width: 100%;
     cursor: move;
     height: 7vh;
-    
+
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 20px 20px 0 0 ;
 }
@@ -1045,24 +1104,25 @@ h3{
     height: 1.3vw;
     font-size: 0.7vw;
     text-align: center;
+    border-top: 1px solid #cccccc54; 
 }
 
 .vehDescription .vehName{
     float: left;
-    padding-top: 0.1vw;
+    padding-top: 0.01vw;
     width: 34%;
-    
+
 }
 
 .vehDescription .vehPlate{
     float: left;
-    padding-top: 0.1vw;
+    padding-top: 0.01vw;
     width: 33%;
 }
 
 .vehDescription .copy{
     float: left;
-    padding-top: 5px;
+    padding-top: 1px;
     width: 33%;
     height: 100%;
     background-color: rgba(18, 89, 155, 0.295);
