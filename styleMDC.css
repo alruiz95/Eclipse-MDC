@@ -464,17 +464,17 @@ h3{
     font-size: 2vh;
 }
 
-#createButton{
+.createButton{
     float: right;
     background-color: #20770f;
     padding: 0 3%;
     border-radius: 0.5vw;
     cursor: pointer;
 }
-#createButton:hover{
+.createButton:hover{
     background-color: #134409;
 }
-#createButton:active{
+.createButton:active{
     background-color: #1c630e;
 }
 
@@ -513,12 +513,18 @@ h3{
 }
 #r911 div p:nth-child(2){
     width: 5%;
+    text-align: center;
 }
 #r911 div p:nth-child(3){
     width: 3%;
+    text-align: center;
 }
 #r911 div p:nth-child(4){
     width: 13%;
+    -webkit-user-select: text;  /* Chrome all / Safari all */
+    -moz-user-select: text;     /* Firefox all */
+    -ms-user-select: text;      /* IE 10+ */
+    user-select: text;          /* Likely future */
 }
 #r911 div p:nth-child(5){
     width: 61%;
@@ -528,10 +534,9 @@ h3{
 }
 #r911 div p:nth-child(6) i{
     width: 33%;
-    height: 1vw;
+    height: 2vh;
     padding-top: 0.1vw;
-    font-size: 1vw;
-    font-size: 0.8vw;
+    font-size: 1.5vh;
     float: right;
 }
 
@@ -566,20 +571,24 @@ h3{
 }
 #backup div p:nth-child(3){
     width: 5%;
+    text-align: center;
 }
 #backup div p:nth-child(4){
     width: 15%;
+    text-align: center;
 }
 #backup div p:nth-child(5){
     width: 37%;
 }
 #backup div p:nth-child(6){
     width: 25%;
+   
 }
 #backup div p:nth-child(6) i{
-    height: 1vw;
+    height: 2vh;
     padding-top: 0.2vw;
     width: 33%;
+    font-size: 1.3vh;
 }
 
 #bolos{
@@ -603,26 +612,37 @@ h3{
     float: left;
     border-bottom: 1px dotted white;
 }
+
 #bolos div p:nth-child(1){
+    width: 3%;
+    text-align: center;
+}
+
+#bolos div p:nth-child(2){
     width: 8%;
     text-align: center;
 }
-#bolos div p:nth-child(2){
-    width: 12%;
-}
 #bolos div p:nth-child(3){
-    width: 18%;
+    width: 12%;
+    padding-left: 1%;
 }
+
 #bolos div p:nth-child(4){
-    width: 55%;
+    width: 18%;
+    padding-left: 1%;
 }
+
 #bolos div p:nth-child(5){
+    width: 52%;
+}
+#bolos div p:nth-child(6){
     width: 7%;
 }
-#bolos div p:nth-child(5) i{
-    height: 1vw;
+#bolos div p:nth-child(6) i{
+    height: 2vh;
     padding-top: 0.2vw;
     width: 100%;
+    font-size: 1.3vh;
 }
 
 /* ======== Search =========== */
@@ -720,6 +740,9 @@ h3{
     color: aliceblue;
     cursor: pointer;
     padding: 0% 5%;
+}
+.clicklabe:active{
+    background-color: #363636;
 }
 .Valid{
     color: darkgreen;

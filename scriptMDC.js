@@ -16,16 +16,30 @@ var VehicleContent = "vehicleContentID";
 
 var homeHTMLElement = document.createElement("div");
 var searchHTMLElement = document.createElement("div");
-var searchHTMLElement = document.createElement("div");
+var notepadHTMLElement = document.createElement("div");
 var searchHTMLElement = document.createElement("div");
 var searchHTMLElement = document.createElement("div");
 var searchHTMLElement = document.createElement("div");
 
+// ============= HOME IDS
+var callsBoxMiniID="idCallsBox";
+var calls911ID="calls911Id";
+var callsBackupID="callsBackupID";
+var bolosListID="bolosListID";
+
+
+// ============ MDC Global Variables
+var UnitStats = {"avaible":0, "unavaible":1, "responding":2, "onScene":3}
+var myUnitStatus = UnitStats.avaible;
+
+//============= search ids
+var indvChargers = "indvChargers";
 
 function onLoad(){
 
   loadFileToElement(homeHTMLElement, "home");
   loadFileToElement(searchHTMLElement, "search");
+  loadFileToElement(notepadHTMLElement, "notepad");
 
   var checked = localStorage.getItem('darkTheme');
   if ((checked === 'true') || checked == null){
@@ -59,6 +73,11 @@ function onLoad(){
   tempData();
   clickMenuOption(null,"home");
   
+  //myUnitStatus.registerListener(myUnitStatusCahnge);
+}
+
+function myUnitStatusCahnge(val){
+
 }
 
 function OnOverflowChanged (event) {
@@ -72,6 +91,11 @@ function OnOverflowChanged (event) {
           break;
     }
   }
+}
+
+function rollDownCallsBox(){
+  var objDiv = document.getElementById(callsBoxID);
+  objDiv.scrollTop = objDiv.scrollHeight;
 }
 
 function clipboardPlate(str){
@@ -110,9 +134,19 @@ function clickMenuOption(divElement, option){
     case "search":
       document.getElementById(IdInnerMDC).innerHTML = searchHTMLElement.innerHTML;
       break;
+    case "notepad":
+      document.getElementById(IdInnerMDC).innerHTML = notepadHTMLElement.innerHTML;
+      break;
   }
 
   
+}
+
+function updateMDC(){
+  var InnerMDCElement =  document.getElementById(calls911ID);
+  if (InnerMDCElement){
+    document.getElementById(IdInnerMDC).innerHTML = homeHTMLElement.innerHTML;
+  }
 }
 
 function loadFileToElement(element, filename) {
@@ -207,10 +241,142 @@ function searchVehicle(){
   document.getElementById(PersonContent).hidden = true;
   document.getElementById(VehicleContent).hidden = false;
 }
+
+// ==================================================== Individual Seaarch
 function searchPerson(){
+  
+  document.getElementById(indvChargers).innerHTML = "";
   document.getElementById(PersonContent).hidden = false;
   document.getElementById(VehicleContent).hidden = true;
+  loadIndvDetails("Arnold Williams", "20/07/1995", 20, 1243245,"Costarrican","Black","black","blue",true,false,"20/07/2020",false,false,1,true,"something cool here \n testing",true);
+  addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
+  addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
+  addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
+  addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
+  addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
+  addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
 }
+
+
+function loadIndvDetails(name, dateOfBirth, age, phoneNumber, nationality, hairColor, skinColor, eyeColor, driverLic, truckLic, weaponLic, probation, bolo, deremits, mugsAndPrints, AddicionalInformation, wanted = false) {
+
+  var details =  document.getElementById(PersonContent).querySelectorAll('.searchIndvProperty');
+  details[0].querySelector("div:nth-child(2)").innerHTML = name;
+  details[1].querySelector("div:nth-child(2)").innerHTML = dateOfBirth;
+  details[2].querySelector("div:nth-child(2)").innerHTML = age;
+  details[3].querySelector("div:nth-child(2)").innerHTML = phoneNumber;
+  details[4].querySelector("div:nth-child(2)").innerHTML = nationality;
+  details[5].querySelector("div:nth-child(2)").innerHTML = hairColor;
+  details[6].querySelector("div:nth-child(2)").innerHTML = skinColor;
+  details[7].querySelector("div:nth-child(2)").innerHTML = eyeColor;
+
+
+  details[8].querySelector("div:nth-child(3)").innerHTML = "";
+  if (typeof driverLic === "boolean" && driverLic == true){
+    details[8].querySelector("div:nth-child(2)").classList.add("Valid");
+    details[8].querySelector("div:nth-child(2)").classList.remove("Invalid");
+    details[8].querySelector("div:nth-child(2)").innerHTML = "Valid";
+  }
+  else if (typeof driverLic === "boolean" && driverLic == false){
+    details[8].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[8].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[8].querySelector("div:nth-child(2)").innerHTML = "Invalid";
+  }
+  if (typeof driverLic === "string"){
+    details[8].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[8].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[8].querySelector("div:nth-child(2)").innerHTML = "Invalid";
+    details[8].querySelector("div:nth-child(3)").innerHTML = "Suspended til: " + driverLic;
+  }
+  
+
+  details[9].querySelector("div:nth-child(3)").innerHTML = "";
+  if (typeof truckLic === "boolean" && truckLic == true){
+    details[9].querySelector("div:nth-child(2)").classList.add("Valid");
+    details[9].querySelector("div:nth-child(2)").classList.remove("Invalid");
+    details[9].querySelector("div:nth-child(2)").innerHTML = "Valid";
+  }
+  else if (typeof truckLic === "boolean" && truckLic == false){
+    details[9].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[9].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[9].querySelector("div:nth-child(2)").innerHTML = "Invalid";
+  }
+  if (typeof truckLic === "string"){
+    details[9].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[9].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[9].querySelector("div:nth-child(2)").innerHTML = "Invalid";
+    details[9].querySelector("div:nth-child(3)").innerHTML = "Suspended til: " + truckLic;
+  }
+
+  details[10].querySelector("div:nth-child(3)").innerHTML = "";
+  if (typeof weaponLic === "boolean" && weaponLic == true){
+    details[10].querySelector("div:nth-child(2)").classList.add("Valid");
+    details[10].querySelector("div:nth-child(2)").classList.remove("Invalid");
+    details[10].querySelector("div:nth-child(2)").innerHTML = "Valid";
+  }
+  else if (typeof weaponLic === "boolean" && weaponLic == false){
+    details[10].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[10].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[10].querySelector("div:nth-child(2)").innerHTML = "Invalid";
+  }
+  else{
+    details[10].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[10].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[10].querySelector("div:nth-child(2)").innerHTML = "Invalid";
+    details[10].querySelector("div:nth-child(3)").innerHTML = "Suspended til: " + weaponLic;
+  }
+
+
+  if (probation == true){
+    details[11].querySelector("div:nth-child(2)").classList.add("Valid");
+    details[11].querySelector("div:nth-child(2)").classList.remove("Invalid");
+    details[11].querySelector("div:nth-child(2)").innerHTML = "Yes";
+  }
+  else {
+    details[11].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[11].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[11].querySelector("div:nth-child(2)").innerHTML = "No";
+  }
+
+  if (bolo != true){
+    details[12].querySelector("div:nth-child(2)").classList.add("Valid");
+    details[12].querySelector("div:nth-child(2)").classList.remove("Invalid");
+    details[12].querySelector("div:nth-child(2)").innerHTML = "Clean";
+  }
+  else {
+    details[12].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[12].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[12].querySelector("div:nth-child(2)").innerHTML = "Wanted";
+  }
+
+  details[13].querySelector("div:nth-child(2)").innerHTML = deremits;
+
+  if (mugsAndPrints == true){
+    details[14].querySelector("div:nth-child(2)").classList.add("Valid");
+    details[14].querySelector("div:nth-child(2)").classList.remove("Invalid");
+    details[14].querySelector("div:nth-child(2)").innerHTML = "Taken";
+  }
+  else {
+    details[14].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[14].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[14].querySelector("div:nth-child(2)").innerHTML = "Missing";
+  }
+
+  document.getElementById(PersonContent).querySelector("textarea").value = AddicionalInformation;
+}
+
+function addCharge(time, code, description, officer){
+  console.log("test");
+  var chargersElements = document.getElementById(indvChargers);
+  chargersElements.innerHTML = 
+  `<div>
+    <p>` + time + `</p>
+    <p>` + code + `</p>
+    <p>` + description + `</p>
+    <p>` + officer + `</p>
+  </div>` + chargersElements.innerHTML;
+}
+
 
 function toggleMDC(){
   if (document.getElementById(CompleteMDCid).hidden){
@@ -228,9 +394,8 @@ function unhideMDCHome(){
 }
 
 
-function add911Call(type, id, time, caller, information){
-  var callsBoxMiniID="idCallsBox";
-  var calls911ID="calls911Id";
+function add911Call(type, id, time, caller, information, onload=false){
+  
   var boxElement = document.getElementById(callsBoxMiniID);
 
   var callType = null;
@@ -268,7 +433,85 @@ function add911Call(type, id, time, caller, information){
                 '<i class="fas fa-location-arrow setcall" onclick="setCall(' + id + ')"></i>' +
                 '<i class="fas fa-times closeCall" onclick="closeCall(' + id + ')"></i>' +
           '</div>'
+  boxElement.innerHTML  = inner + boxElement.innerHTML;
+  updateMDC();
+  rollDownCallsBox();
+  if(!onload && myUnitStatus == UnitStats.avaible){
+    var audio = new Audio('sounds/notification.mp3');
+    audio.volume = 0.04;
+    audio.play()
+  }
+}
+
+function addBackupCall(isPanic, id, time, unit, information, onload=false){
+  
+
+  var boxElement = document.getElementById(callsBoxMiniID);
+  var inner = '<div class="call" id="miniCall-' + id + '">' +
+                '<div class="callType ' + (isPanic ?  'both' : 'police')  + '"><i class="fa ' + (isPanic ?  'fa-exclamation-triangle' : 'fa-exclamation ') + '"></i></div>' + 
+                '<div class="description" onclick="unhideMDCHome()" '+ (isPanic ? 'style="background-color: rgba(53, 10, 10, 0.884);"' :'') +'">' + unit +" - " + (isPanic ? 'PANIC ALARM' : ('BACKUP: ' + information)) + '</div>' +
+                '<i class="fas fa-sign-in-alt responce" onclick="respondCall(' + id + ')"></i>' +
+                '<i class="fas fa-location-arrow setcall" onclick="setCall(' + id + ')"></i>' +
+                '<i class="fas fa-times closeCall" onclick="closeCall(' + id + ')"></i>' +
+              '</div>';
+
   boxElement.innerHTML += inner;
+
+  boxElement = homeHTMLElement.querySelector('#' + callsBackupID);
+  var inner = '<div id="call911-' + id + '" >' +
+                  '<p><i class="fa ' + (isPanic ?  'fa-exclamation-triangle' : 'fa-exclamation ') +'" ' + (isPanic ? 'style="color: rgb(252, 77, 77)"' : "") + '></i></p>' +
+                  '<p>' + time + '</p>' +
+                  '<p>0</p>' +
+                  '<p>' + unit + '</p>' +
+                  '<p>' + (isPanic ? 'PANIC ALARM' : ('BACKUP: ' + information)) + '</p>' +
+                  '<p> <i class="fas fa-sign-in-alt responce" onclick="respondCall(' + id + ')"></i>' +
+                      '<i class="fas fa-location-arrow setcall" onclick="setCall(' + id + ')"></i>' +
+                      '<i class="fas fa-times closeCall" onclick="closeCall(' + id + ')"></i>' +
+              '</div>'
+  boxElement.innerHTML = inner + boxElement.innerHTML;
+  updateMDC();
+  rollDownCallsBox();
+
+  if (isPanic && !onload ){
+    var audio = new Audio('sounds/panic-button.mp3');
+    audio.volume = 0.04;
+    audio.play()
+  }
+  else if(!isPanic && !onload && myUnitStatus == UnitStats.avaible){
+    var audio = new Audio('sounds/notification.mp3');
+    audio.volume = 0.04;
+    audio.play()
+  }
+  
+}
+
+function closeCall(id){
+ 
+  document.getElementById('miniCall-' + id).remove();
+  
+  homeHTMLElement.querySelector('#call911-' + id).remove();
+  updateMDC();  
+  rollDownCallsBox();
+}
+
+function addBoloToMDC (id, time, plate, person, information) {
+  var boxElement = homeHTMLElement.querySelector('#' + bolosListID);
+  var inner = '<div id="boloID-' + id + '">' +
+                '<p>' + id + '</p>' +
+                '<p>' + time + '</p>' +
+                '<p ' + ((plate !== null && plate !== '') ? 'class="clicklabe"': '') +'>' + ((plate !== null && plate !== '') ? plate: 'N/A') +'</p>' +
+                '<p ' + ((person !== null && person !== '') ? 'class="clicklabe"': '') +'>' + ((person !== null && person !== '') ? person: 'N/A') +'</p>' +
+                '<p>' + information + '</p>' +
+                '<p><i class="fas fa-times closeCall" onclick="closeBolo(' + id + ')"></i></p>' +
+              '</div>';
+
+  boxElement.innerHTML += inner;
+  updateMDC();
+}
+
+function closeBolo(id){
+  homeHTMLElement.querySelector('#boloID-' + id).remove();
+  updateMDC();
 }
 
 ///////////////////////////////=================== JQUERRY
@@ -308,9 +551,20 @@ function add911Call(type, id, time, caller, information){
 
 
 function tempData (){
-  add911Call(2, 543, "10:12", "Arnold Williams", "There's a shootout and people are hurt");
-  add911Call(1, 544, "10:22", "Jon_Cena", "I just hit a pole, need help");
-  add911Call(0, 545, "10:43", "Travis palmer", "My car just broke down and now i need a fucking ride to this call ssomsm dfg sdfg fdg");
-  add911Call(0, 546, "10:46", "Mary Davis", "My car just broke down and now i need a fucking ride to this call ssomsm dfg sdfg fdg");
-  add911Call(0, 547, "10:56", "Harry Davis", "My car just broke down and now i need a fucking ride to this call ssomsm dfg sdfg fdg");
+  add911Call(2, 543, "10:12", "Arnold Williams", "There's a shootout and people are hurt", true);
+  add911Call(1, 544, "10:22", "Jon_Cena", "I just hit a pole, need help", true);
+  addBackupCall(true, 548,  "11:01", "22-L-18", "", true);
+  add911Call(0, 545, "10:43", "Travis palmer", "My car just broke down and now i need a fucking ride to this call help", true);
+  addBackupCall(false, 549,  "11:23", "22-L-18", "For MD", true);
+  add911Call(0, 546, "10:46", "Mary Davis", "My car just broke down and now i need a fucking ride to this call ssomsm dfg sdfg fdg", true);
+  add911Call(0, 547, "10:56", "Harry Davis", "My car just broke down and now i need a fucking ride to this call ssomsm dfg sdfg fdg", true);
+  addBackupCall(true, 550,  "11:40", "Staff 1", "", true);
+  add911Call(0, 551, "11:03", "Cashier", "CCTV cameras noticed unusual activities going on the store. Alarm has been triggered", true);
+
+
+  addBoloToMDC (0, "17:30", "24SJDB435L", "Feemo_Jhonson", "Driving Blue and red Chino, Blue shirt, Felony Evation");
+  addBoloToMDC (1, "17:30", "SDDF453SD", "Teemo_Ferguson", "Attempt in murder on a civilian");
+  addBoloToMDC (2, "17:30", null, "Rosa_Melano", "Armed Robbery, blue pants.");
+  addBoloToMDC (3, "17:30", "", null, "Two Individuals");
+  addBoloToMDC (4, "17:30", "SDG34SDFE", "", "Reported Stolen");
 }
