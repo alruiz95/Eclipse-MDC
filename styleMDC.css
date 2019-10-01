@@ -73,7 +73,7 @@ body{
     height: 100%;
     padding: 0 8%;
     font-size: inherit;
-    background: rgb(15, 61, 104)
+    background: rgba(15, 61, 104, 0.493)
 }
 
 .blackTheme{
@@ -244,24 +244,23 @@ body{
 .status {
     height: 5%;
     width: 100%;
+    background-color: rgba(41, 41, 41, 0.733);
 }
 
 
 .status .option {
-    height: 80%;
-    background-color: rgb(29, 110, 186);
+    height: 100%;
+    background-color: rgba(29, 110, 186, 0.733);
     color: azure;
-    font-size: 1.3vh;
+    font-size: 2vh;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 0.23% 0.5%;
     padding: 0 5%;
     float: left;
     text-align: center;
     vertical-align: middle;
-    line-height: 200%;
+    line-height: 150%;
     z-index: 100;
-    border-radius: 2em / 5em;
 }
 
 .searchbar{
@@ -287,9 +286,7 @@ body{
     color: inherit;
     font-family: Arial, Helvetica, sans-serif;
 }
-::placeholder { /* Most modern browsers support this now. */
-    color:    rgb(99, 99, 99);
- }
+
 
 .search_icon{
     float: left;
@@ -454,21 +451,29 @@ body{
 
 /* ======= Home ============== */
 .topHomeColumn{
-    margin: 0 1%;
+    /* margin: 0 1%; */
     float: left;
     height: 100%;
-
+    
     font-size: 1.2vh;
+}
+.topHomeColumn div{
+    padding: 0 1%;
+}
+.topHomeColumn hr{
+    margin: 0 1%;
 }
 h3{
     font-size: 2vh;
+    padding-left: 2%;
+    margin-bottom: -0.3vh;
 }
 
 .createButton{
     float: right;
-    background-color: #20770f;
-    padding: 0 3%;
-    border-radius: 0.5vw;
+    background-color: #20770f98;
+    padding: 0 5%;
+    /* border-radius: 0.5vw; */
     cursor: pointer;
 }
 .createButton:hover{
@@ -479,7 +484,7 @@ h3{
 }
 
 #r911{
-    width: 97%;
+    width: 100%;
 }
 #r911 div:first-of-type{
     margin-right: 20px;
@@ -497,7 +502,7 @@ h3{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     float: left;
-    border-bottom: 1px dotted white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.308);
 }
 #r911 div p:nth-child(1){
     width: 8%;
@@ -542,7 +547,7 @@ h3{
 
 
 #backup{
-    width: 35%;
+    width: 40%;
 }
 #backup div:first-of-type{
     margin-right: 20px;
@@ -560,7 +565,7 @@ h3{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     float: left;
-    border-bottom: 1px dotted white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.308);
 }
 #backup div p:nth-child(1){
     width: 10%;
@@ -610,7 +615,7 @@ h3{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     float: left;
-    border-bottom: 1px dotted white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.308);
 }
 
 #bolos div p:nth-child(1){
@@ -649,8 +654,8 @@ h3{
 
 .searchIndvPhoto{
     float: left;
-    height: 150px;
-    width: 150px;
+    height: 15vh;
+    width: 15vh;
     background-image: url("imgs/mugshot.jpg") ;
     background-color: #cccccc;
     /* margin-right: 20px; */
@@ -686,12 +691,17 @@ h3{
 
 .searchIndvDetails{
     float: left;
-    width: 25%;
+    width: 40%;
+    height: 100%;
     /* margin-right: 0.5%; */
     /* margin-bottom: 10px; */
-    padding: 0.5%;
-    font-size: 0.6vw;
+    margin: 0 1% ;
+    padding: 1%;
+    font-size: 0.65vw;
+    overflow: auto;
     
+    background-color: rgba(43, 43, 43, 0.623);
+    border-radius: 6px;
 }
 
 .searchIndvDetails .divisory{
@@ -706,6 +716,40 @@ h3{
     margin-top:1vh;
 
     font-family: 'Courier New', Courier, monospace;
+}
+
+#personContentID .tabs{
+    height: 5%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.39);
+    float: left;
+    font-size: 1.8vh;
+}
+
+#personContentID .tabs .tab{
+    height: 100%;
+    padding: 0 1.5%;
+    margin-right: 0.2%;
+    background-color: rgba(29, 110, 186, 0.733);
+    float: left;
+}
+
+#personContentID .tabs .tab:hover{
+    background-color: rgb(14, 68, 117);
+    cursor: pointer;
+}
+
+#personContentID .tabs .option{
+    height: 100%;
+    padding: 0 1.5%;
+    margin-left: 0.2%;
+    background-color: rgba(186, 157, 29, 0.733);
+    float: right;
+}
+
+#personContentID .tabs .option:hover{
+    background-color: rgb(186, 157, 29);
+    cursor: pointer;
 }
 
 .searchIndvProperty{
@@ -761,29 +805,23 @@ h3{
     float: left;
 }
 
-.list3Container{
-    width: 98%;
+#tabCantent{
+    width: 100%;
     height: 63%;
     float: left;
-    margin: 0% 1%;
     font-size: 0.7vw;
 }
 
-.list3Container .list3 {
-    width: 20vw;
-    float: left;
-}
-
 #chargesPlayer{
-    width: 35vw;
+    width: 99.5%;
     float: left;
     margin: 0 0.5%;
-    height: 95%;
+    height: 85%;
 }
 
 #chargesPlayer .listCharges{
     height: calc(100% - 1.4vw);
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 #chargesPlayer .listCharges div {
@@ -816,48 +854,53 @@ h3{
     width: 20%;
 }
 
-
-#listVehicles{
-    height: 40%;
-}
-
-#listVehicles div p{
-    float: left;
-    padding: 0;
-    margin: 0;
-}
-
-#listVehicles .ClistVehicles div {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+#listVehicles {
+    height: 85%;
     width: 100%;
+    font-size: 0.6vw;
+    overflow-y: auto;
+}
+
+#listVehicles .vehicleCard{
     float: left;
-    border-bottom: 1px dotted white;
+    height: 34%;
+    width: 31%;
+    background-color: #6b6b6b8a;
+    border-radius: 3% 3% 3% / 15% 15%;
+    margin: 1% 1%;
+}
+
+#listVehicles .vehicleCard:hover{
+    background-color: #3d3d3dde;
     cursor: pointer;
 }
 
-
-#listVehicles .ClistVehicles{
-    height: calc(100% - 2vw);
-    overflow-y: scroll;
+#listVehicles img{
+    width: 40%;
+    height: 100%;
+    float: left;
+    border-radius: 3% 3% 3% / 15% 15%;
 }
 
-
-#listVehicles .ClistVehicles div:hover{
-    background: #0E355A;
+#listVehicles .vehProperty{
+    width: 56%;
+    float: left;
+    margin: 0 2%;
+    border-bottom: 1px solid rgba(212, 212, 212, 0.733);
 }
-#listVehicles div p:nth-child(1){
-    width: 20%;
+#listVehicles .vehProperty div:nth-child(1){
+    float: left;
 }
-#listVehicles div p:nth-child(2){
-    width: 20%;
-}
-#listVehicles div p:nth-child(3){
-    width: 60%;
+#listVehicles .vehProperty div:nth-child(2){
+    float: right;
 }
 
 
 #listProperties{
-    height: 25%;
+    width: 100%;
+    font-size: 1.8vh;
+    height: 85%;
+    overflow-y: auto;
 }
 #listProperties .ClistProperties{
     height: calc(100% - 1vw);
@@ -869,13 +912,31 @@ h3{
     width: 100%;
     float: left;
     border-bottom: 1px dotted white;
+    padding-left: 4%;
+    background-color: #36363656;
 }
 
 #listfire{
-    height: 35%;
+    height: 100%;
+    width: 100%;
+    font-size: 1.7vh;
+    
+}
+
+#listfire hr {
+    border: 2px solid rgb(29, 110, 186);
+    border-radius: 1px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    width: 100%;
+    float: left;
+}
+
+#listfire div{
+    width: 100%;
 }
 #listfire .ClistFire{
-    height: calc(100% - 2.3vw);
+    height: calc(100% - 2vw);
     overflow-y: scroll;
 }
 
@@ -891,6 +952,12 @@ h3{
     float: left;
     cursor: pointer;
     border-bottom: 1px dotted white;
+    background: rgba(68, 68, 68, 0.432);
+    
+}
+
+#listfire .ClistFire div p:nth-child(1){
+    font-weight: bold;
 }
 
 #listfire .ClistFire div:hover{
@@ -915,7 +982,7 @@ h3{
   }
 
 .colorDisplay{
-    height:  0.6vw;
+    height:  0.8vw;
     width: 35%;
     border-radius: 0.6vw;
     border: 1px solid #cccccc;
@@ -1007,13 +1074,13 @@ h3{
 }
 
 .police{
-    background-color: #1D6EBA;
+    background-color: rgba(29, 110, 186, 0.685);
 }
 .medic{
-    background-color: rgb(177, 112, 16);
+    background-color: rgb(177, 112, 16, 0.685);
 }
 .both{
-    background-color: rgb(177, 16, 16);
+    background-color: rgb(177, 16, 16, 0.685);
 }
 
 .miniMDC .call .description{
@@ -1032,7 +1099,7 @@ h3{
     width: 30px;
     height: 100%;
     float: right;
-    background-color: rgb(121, 109, 4);
+    background-color: rgb(121, 109, 4, 0.664);
     font-size: 1vh;
     text-align: center;
     cursor: pointer;
@@ -1046,7 +1113,7 @@ h3{
     width: 30px;
     height: 100%;
     float: right;
-    background-color: rgb(17, 90, 14);
+    background-color: rgba(17, 90, 14, 0.664);
     font-size: 1vh;
     text-align: center;
     border-radius: 0 5px 5px 0;
@@ -1061,7 +1128,7 @@ h3{
     width: 30px;
     height: 100%;
     float: right;
-    background-color: rgb(121, 4, 4);
+    background-color: rgb(121, 4, 4, 0.664);
     font-size: 1vh;
     text-align: center;
     cursor: pointer;

@@ -1,36 +1,27 @@
 
 <div style="width: 100%; height: 7%; float: left;">
     <div style="margin: 0 0; float: left; ">
-        <div  style="float: left;"> 
-            Name:
-        </div>
         <div class="searchbar" style="width: 250px">
-            <input id="personInput" class="search_input" type="text" name="" placeholder="Search..."></input>
+            <input id="personInput" class="search_input" type="text" name="" placeholder="Search by Name or ID..."></input>
             <a class="search_icon" onclick="searchPerson()"><i class="fa fa-search"></i></a>
         </div>
     </div>
-    <div style="margin: 0 2%; float: left;">
-        <div  style="float: left;"> 
-            Plate:
-        </div>
+    <div style="margin: 0 1%; float: right;">
         <div class="searchbar" style="width: 200px">
-            <input id="plateInput" class="search_input" type="text" name="" placeholder="Search..."></input>
-            <a class="search_icon" onclick="searchVehicle()"><i class="fa fa-search"></i></a>
-        </div>
-    </div>
-    <div style="margin: 0 2%; float: left;">
-        <div  style="float: left;"> 
-            Firearm:
-        </div>
-        <div class="searchbar" style="width: 200px">
-            <input id="plateInput" class="search_input" type="text" name="" placeholder="Search..."></input>
+            <input id="plateInput" class="search_input" type="text" name="" placeholder="Search Firearm..."></input>
             <a class="search_icon" onclick="searchFirearm()"><i class="fa fa-search"></i></a>
         </div>
     </div>
+    <div style="margin: 0 1%; float: right;">
+        <div class="searchbar" style="width: 200px">
+            <input id="plateInput" class="search_input" type="text" name="" placeholder="Search Plate..."></input>
+            <a class="search_icon" onclick="searchVehicle()"><i class="fa fa-search"></i></a>
+        </div>
+    </div>
 </div>
-<div id="wantedWarning" class="alarm Invalid" onclick="showWanted()" >Wanted!!</div>
-<div id="personContentID" style="width: 100%; height: 85%; overflow: auto; float: left;">
-    <div style="width: 100%; height: 37%; padding: 0 1%; overflow: auto; float: left;">
+<div id="wantedWarning" class="alarm Invalid" onclick="showWanted()" hidden>Wanted!!</div>
+<div id="personContentID" style="width: 100%; height: 85%; overflow: hidden; float: left;">
+    <div style="width: 100%; height: 40%; padding: 1%; float: left;">
         <div class="searchIndvPhoto">
             <img src="imgs/User.png" alt="">
         </div>
@@ -111,13 +102,32 @@
                 <div class="Invalid editable"> Not Taken </div>
             </div>
         </div>
-        <div class="searchIndvDetails">
-                Additional Information:
-            <hr>
-            <textarea class="form-control" rows="6"></textarea>
+    </div>
+    <div class="tabs">
+        <div class="tab" onclick="toggleSearTab('chargesPlayer')">
+            RECORD
+        </div>
+        <div class="tab" onclick="toggleSearTab('chargesPlayer')">
+            Tickets
+        </div>
+        <div class="tab" onclick="toggleSearTab('listVehicles')">
+            Vehicles
+        </div>
+        <div class="tab" onclick="toggleSearTab('listProperties')">
+            Properties
+        </div>
+        <div class="tab" onclick="toggleSearTab('listfire')">
+            Firearms
+        </div>
+
+        <div class="option" onclick="toggleSearTab('chargesPlayer')">
+            Modify Info
+        </div>
+        <div class="option" onclick="toggleSearTab('chargesPlayer')">
+            Modify License
         </div>
     </div>
-    <div class="list3Container">
+    <div id="tabCantent">
         <div id="chargesPlayer">
             RECORD <div class="createButton">Add Charge</div>
             <hr>
@@ -130,59 +140,190 @@
             <div id="indvChargers" class="listCharges">
                    
             </div>
-            
         </div>
-        <div class="list3" id="listVehicles">Vehicles<hr>
-            <div style="padding-bottom: 1vw; border-bottom: 1px solid white;">
-                    <p>Status</p>
-                    <p>Plate</p>
-                    <p>Vehicle</p>
-                </div>   
-                <div class="ClistVehicles">
-                        <div>
-                            <p class="Invalid">Stolen</p>
-                            <p>VF006</p>
-                            <p>Shafter V12</p>
-                        </div> 
-                        <div>
-                            <p class="Valid">Valid</p>
-                            <p>VF006</p>
-                            <p>Shafter V12</p>
-                        </div> 
-                        <div>
-                            <p class="">Warning</p>
-                            <p>VF006</p>
-                            <p>Shafter V12</p>
-                        </div> 
-                        <div>
-                            <p class="Invalid">Stolen</p>
-                            <p>VF006</p>
-                            <p>Shafter V12</p>
-                        </div> 
-                        <div>
-                            <p class="Valid">Valid</p>
-                            <p>VF006</p>
-                            <p>Shafter V12</p>
-                        </div> 
-                        <div>
-                            <p class="">Warning</p>
-                            <p>VF006</p>
-                            <p>Shafter V12</p>
-                        </div> 
+        <div id="listVehicles" hidden>
+            <div class="vehicleCard">
+                <img src="imgs/vehicles/164px-Chino.png" alt="">
+                <div  class="vehProperty">
+                    <div>Plate:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Main Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(18, 50, 99)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Secundary Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(41, 41, 41)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Make:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Model:</div>
+                    <div>PR45JMWE2</div>
                 </div>
             </div>
-        <div class="list3" id="listProperties">Properties<hr>
+
+            <div class="vehicleCard">
+                <img src="imgs/vehicles/164px-Chino.png" alt="">
+                <div  class="vehProperty">
+                    <div>Plate:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Main Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(18, 50, 99)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Secundary Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(41, 41, 41)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Make:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Model:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+            </div>
+
+            <div class="vehicleCard">
+                <img src="imgs/vehicles/164px-Chino.png" alt="">
+                <div  class="vehProperty">
+                    <div>Plate:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Main Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(18, 50, 99)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Secundary Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(41, 41, 41)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Make:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Model:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+            </div>
+
+            <div class="vehicleCard">
+                <img src="imgs/vehicles/164px-Chino.png" alt="">
+                <div  class="vehProperty">
+                    <div>Plate:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Main Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(18, 50, 99)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Secundary Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(41, 41, 41)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Make:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Model:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+            </div>
+
+            <div class="vehicleCard">
+                <img src="imgs/vehicles/164px-Chino.png" alt="">
+                <div  class="vehProperty">
+                    <div>Plate:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Main Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(18, 50, 99)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Secundary Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(41, 41, 41)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Make:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Model:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+            </div>
+
+            <div class="vehicleCard">
+                <img src="imgs/vehicles/164px-Chino.png" alt="">
+                <div  class="vehProperty">
+                    <div>Plate:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Main Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(18, 50, 99)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Secundary Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(41, 41, 41)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Make:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Model:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+            </div>
+            
+            <div class="vehicleCard">
+                <img src="imgs/vehicles/164px-Chino.png" alt="">
+                <div  class="vehProperty">
+                    <div>Plate:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Main Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(18, 50, 99)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Secundary Color:</div>
+                    <div class="colorDisplay" style="background-color: rgb(41, 41, 41)"></div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Make:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+                <div  class="vehProperty">
+                    <div>Model:</div>
+                    <div>PR45JMWE2</div>
+                </div>
+            </div>
+
+        </div>
+        <div id="listProperties" hidden>
             <div class="ClistProperties">
                 <div>DroveRoad #3</div> 
                 <div>DroveRoad #3</div>
             </div>
         </div>
-        <div class="list3" id="listfire">Firearms<hr>
-            <div style="padding-bottom: 1vw; border-bottom: 1px solid white;">
-                    <p>Status</p>
-                    <p>Serial</p>
-                    <p>Name</p>
-                </div> 
+        <div id="listfire" hidden>
+            <div style="padding-bottom: 1vw; width: 100%">
+                <p>Status</p>
+                <p>Serial</p>
+                <p>Name</p>
+            </div> 
+            <hr>
             <div class="ClistFire">
                 <div>
                     <p class="Invalid">Stolen</p>

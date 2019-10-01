@@ -34,6 +34,7 @@ var myUnitStatus = UnitStats.avaible;
 
 //============= search ids
 var indvChargers = "indvChargers";
+var tabsIds = ["chargesPlayer", "listVehicles", "listProperties", "listfire"];
 
 function onLoad(){
 
@@ -155,11 +156,11 @@ function loadFileToElement(element, filename) {
   txtFile.onreadystatechange = function() {
     if (txtFile.readyState === 4) {  // Makes sure the document is ready to parse.
       if (txtFile.status === 200) {  // Makes sure it's found the file.
-        element.innerHTML = txtFile.responseText; 
+        element.innerHTML = txtFile.responseText;
       }
     }
   }
-  txtFile.send(null);
+  txtFile.send();
 }
 
 
@@ -362,7 +363,7 @@ function loadIndvDetails(name, dateOfBirth, age, phoneNumber, nationality, hairC
     details[14].querySelector("div:nth-child(2)").innerHTML = "Missing";
   }
 
-  document.getElementById(PersonContent).querySelector("textarea").value = AddicionalInformation;
+  //document.getElementById(PersonContent).querySelector("textarea").value = AddicionalInformation;
 }
 
 function addCharge(time, code, description, officer){
@@ -514,6 +515,14 @@ function closeBolo(id){
   updateMDC();
 }
 
+function toggleSearTab(id){
+  tabsIds.forEach(function(element) {
+    document.getElementById(element).hidden = true;
+  });
+  document.getElementById(id).hidden = false;
+}
+
+
 ///////////////////////////////=================== JQUERRY
 (function( $ ){
 
@@ -567,4 +576,13 @@ function tempData (){
   addBoloToMDC (2, "17:30", null, "Rosa_Melano", "Armed Robbery, blue pants.");
   addBoloToMDC (3, "17:30", "", null, "Two Individuals");
   addBoloToMDC (4, "17:30", "SDG34SDFE", "", "Reported Stolen");
+}
+
+
+function fadeout (element){
+  element.style.opacity = "0.5"; 
+}
+
+function fadein (element){
+  element.style.opacity = "1"; 
 }
