@@ -256,6 +256,12 @@ function searchPerson(){
   addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
   addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
   addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
+  addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
+  addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
+  addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
+  addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
+  addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
+  addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
 }
 
 
