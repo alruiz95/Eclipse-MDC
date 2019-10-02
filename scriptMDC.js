@@ -34,7 +34,7 @@ var myUnitStatus = UnitStats.avaible;
 
 //============= search ids
 var indvChargers = "indvChargers";
-var tabsIds = ["chargesPlayer", "listVehicles", "listProperties", "listfire"];
+var tabsIds = ["chargesPlayer", "listVehicles", "listProperties", "listfire","notes"];
 
 function onLoad(){
 
