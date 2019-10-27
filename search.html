@@ -1,22 +1,22 @@
 
 <div style="width: 100%; height: 7%; float: left;">
     <div style="padding: 0 0; float: left; ">
-        <div class="searchbar" style="width: 250px">
+        <div class="searchbar" style="width: 200px;">
             <input id="personInput" class="search_input" type="text" name="" placeholder="Search by Name or ID..."></input>
-            <a class="search_icon" onclick="searchPerson()"><i class="fa fa-search"></i></a>
         </div>
+        <a class="search_icon" onclick="searchPerson()"><i class="fa fa-search"></i></a>
     </div>
     <div style="float: right;">
         <div class="searchbar" style="width: 200px">
             <input id="plateInput" class="search_input" type="text" name="" placeholder="Search Firearm..."></input>
-            <a class="search_icon" onclick="searchFirearm()"><i class="fa fa-search"></i></a>
         </div>
+        <a class="search_icon" onclick="searchFirearm()"><i class="fa fa-search"></i></a>
     </div>
     <div style="float: right;">
         <div class="searchbar" style="width: 200px">
             <input id="plateInput" class="search_input" type="text" name="" placeholder="Search Plate..."></input>
-            <a class="search_icon" onclick="searchVehicle()"><i class="fa fa-search"></i></a>
         </div>
+        <a class="search_icon" onclick="searchVehicle()"><i class="fa fa-search"></i></a>
     </div>
 </div>
 <div id="wantedWarning" class="alarm Invalid" onclick="showWanted()" >Wanted!!</div>
@@ -59,7 +59,7 @@
                 <div class="editable"></div>
             </div>
         </div>
-        <div class="searchIndvDetails">
+        <div class="searchIndvDetails" style="float: right;">
             <div  class="searchIndvProperty">
                 <div>Driver License:</div>
                 <div class="Invalid">Invalid</div>
@@ -132,7 +132,7 @@
     </div>
     <div id="tabCantent">
         <div id="chargesPlayer">
-            RECORD <div class="createButton">Add Charge</div>
+            RECORD <div class="createButton">Add Charges</div>
             <hr>
             <div style="padding-bottom: 1vw; border-bottom: 1px solid white;">
                 <p>Date</p>
@@ -351,7 +351,7 @@
     </div>
 </div>
 <div id="vehicleContentID"  style="width: 100%; height: 85%; overflow: auto; float: left;" hidden>
-    <div style="width: 100%; height: 50%; padding: 1%; overflow: auto; float: left;">
+    <div style="width: 100%; height: 35%; padding: 1%; overflow: auto; float: left;">
             <div class="vehiclePhoto" id="vehiclePhotoID">
                 <img src="imgs/vehicles/164px-Chino.png" alt="">
             </div>
@@ -361,7 +361,7 @@
                     <div>PR45JMWE2</div>
                 </div>
                 <div  class="searchIndvProperty">
-                    <div>R/O:</div>
+                    <div>Register Owner:</div>
                     <div class="clicklabe">Arnold Williams</div>
                 </div>
                 <div  class="searchIndvProperty">
@@ -408,10 +408,20 @@
                         <button type="button" class="btn btn-danger" style="font-size: 1vh; width: 50%; float: right;">Report Stolen</button>
                 </div>
             </div>
-            <div class="searchIndvDetails">
-                Additional Information:
-                <hr>
-                <textarea class="form-control" rows="7"></textarea>
-            </div>
     </div>
+    <div class="tabs">
+        <div class="tab" onclick="toggleSearTab('owners')">
+            Owner History
+        </div>
+        <div class="tab" onclick="toggleSearTab('notesVehicle')">
+            Notes
+        </div>
+
+    </div>
+    <div class="tabCantentVehicle">
+        <div id="notesVehicle" hidden>
+            <textarea id="vehicleNotes"></textarea>
+        </div>
+    </div>
+    
 </div>

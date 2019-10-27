@@ -17,7 +17,7 @@ var VehicleContent = "vehicleContentID";
 var homeHTMLElement = document.createElement("div");
 var searchHTMLElement = document.createElement("div");
 var notepadHTMLElement = document.createElement("div");
-var searchHTMLElement = document.createElement("div");
+var unitsHTMLElement = document.createElement("div");
 var searchHTMLElement = document.createElement("div");
 var searchHTMLElement = document.createElement("div");
 
@@ -34,13 +34,19 @@ var myUnitStatus = UnitStats.avaible;
 
 //============= search ids
 var indvChargers = "indvChargers";
-var tabsIds = ["chargesPlayer", "listVehicles", "listProperties", "listfire","notes"];
+var tabsIds = ["chargesPlayer", "listVehicles", "listProperties", "listfire", "notes", "notesVehicle"];
 
 function onLoad(){
+
+
+  darkTheme(document.getElementById("darkCheckBox"));
+
+
 
   loadFileToElement(homeHTMLElement, "home");
   loadFileToElement(searchHTMLElement, "search");
   loadFileToElement(notepadHTMLElement, "notepad");
+  loadFileToElement(unitsHTMLElement, "units");
 
   var checked = localStorage.getItem('darkTheme');
   if ((checked === 'true') || checked == null){
@@ -138,6 +144,9 @@ function clickMenuOption(divElement, option){
     case "notepad":
       document.getElementById(IdInnerMDC).innerHTML = notepadHTMLElement.innerHTML;
       break;
+    case "units":
+      document.getElementById(IdInnerMDC).innerHTML = unitsHTMLElement.innerHTML;
+      break;
   }
 
   
@@ -169,22 +178,48 @@ function darkTheme(cb) {
   // window.speechSynthesis.speak(msg);
   // msg = new SpeechSynthesisUtterance('Dispatch to 22 Lincon 18, responde code 3 to last niner');
   // window.speechSynthesis.speak(msg);
-    var mdc = document.getElementById(CompleteMDCid);
-    var leftMenu = document.getElementById(lefrMenuId);
-    if (mdc){
-        if(cb.checked){
-            mdc.classList.remove(whiteThemeClass);
-            mdc.classList.add(darkThemeClass);
-            leftMenu.classList.remove(whiteThemeClassMenu);
-            leftMenu.classList.add(darkThemeClassMenu);
-            localStorage.setItem('darkTheme', true);
-        }else{
-            mdc.classList.add(whiteThemeClass);
-            mdc.classList.remove(darkThemeClass);
-            leftMenu.classList.add(whiteThemeClassMenu);
-            leftMenu.classList.remove(darkThemeClassMenu);
-            localStorage.setItem('darkTheme', false);
+    // var mdc = document.getElementById(CompleteMDCid);
+    // var leftMenu = document.getElementById(lefrMenuId);
+    // if (mdc){
+    //     if(cb.checked){
+    //         leftMenu.classList.remove(whiteThemeClassMenu);
+    //         leftMenu.classList.add(darkThemeClassMenu);
+    //         localStorage.setItem('darkTheme', true);
+    //     }else{
+    //         mdc.classList.add(whiteThemeClass);
+    //         mdc.classList.remove(darkThemeClass);
+    //         leftMenu.classList.add(whiteThemeClassMenu);
+    //         leftMenu.classList.remove(darkThemeClassMenu);
+    //         localStorage.setItem('darkTheme', false);
+    //     }
+    // }
+    
+    var head  = document.getElementsByTagName('head')[0];
+    if(cb.checked)
+    {
+        if (document.getElementById("cssWhite")){
+          document.getElementById("cssWhite").remove();
         }
+        var link  = document.createElement('link');
+        link.id   = "cssBlack";
+        link.rel  = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'styleMDCBlack.css';
+        link.media = 'all';
+        head.appendChild(link);
+        localStorage.setItem('darkTheme', true);
+    }else{
+        if (document.getElementById("cssBlack")){
+          document.getElementById("cssBlack").remove();
+        }
+        var link  = document.createElement('link');
+        link.id   = "cssWhite";
+        link.rel  = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'styleMDCWhite.css';
+        link.media = 'all';
+        head.appendChild(link);
+        localStorage.setItem('darkTheme', false);
     }
    
     console.log("Clicked, new value = " + cb.checked);

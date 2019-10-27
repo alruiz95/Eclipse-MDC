@@ -21,6 +21,24 @@ body{
     height: 99%;
 }
 
+input{
+    border: none;
+    border-bottom: 3px solid #1D6EBA;
+    color: inherit;
+    background: rgba(0, 0, 0, 0.151);
+    resize: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+textarea{
+    border: none;
+    border-bottom: 3px solid #1D6EBA;
+    color: inherit;
+    background: rgba(0, 0, 0, 0.151);
+    resize: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 
 @font-face {
     font-family: "msu1";
@@ -74,19 +92,6 @@ body{
     padding: 0 8%;
     font-size: inherit;
     background: rgba(15, 61, 104, 0.493)
-}
-
-.blackTheme{
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    /* text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour
-  -moz-text-shadow: 0 0 2px #000;
-  -webkit-text-shadow: 0 0 2px #000; */
-}
-
-.whiteTheme{
-    background-color: rgba(255, 255, 255, 0.5);
-    color: rgb(31, 31, 31);
 }
 
 .mdcContent {
@@ -148,12 +153,6 @@ body{
     overflow-y: auto;
 }
 
-.darkBackground{
-    background: #222;
-}
-.whiteBackground{
-    background: rgb(121, 121, 121);
-}
 
 .leftMenu .option {
     cursor: pointer;
@@ -271,7 +270,7 @@ body{
     float: left;
     padding: 0 10px;
     width: 450px;
-    background-color: rgba(34, 34, 34, 0.432)
+    background-color: rgba(34, 34, 34, 0.432);
 }
 
 .search_input{
@@ -279,25 +278,26 @@ body{
     border: 0;
     outline: 0;
     background: none;
-    width: 85%;
     font-size: 1.6vh;
-    color: inherit;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 
 .search_icon{
-    float: right;
+    font-size: 1.6vh;
     height: 100%;
-    width: 25px;
-    padding-left: 6px;
-    color: inherit;
-    background-color: #363636ab;
+    border-bottom: 2px solid rgb(0, 93, 146);
+    float: left;
+    padding: 0.5% 10px;
+    
+    background-color: rgba(34, 34, 34, 0.432)
 }
 
 .search_icon:hover{
     cursor: pointer;
     background-color: #004c79ab;
+    color: white;
 }
 
 .status .divisory {
@@ -323,9 +323,7 @@ body{
     letter-spacing: 0;
 }
 
-.active{
-    border-left: 3px solid #21CCFC;
-}
+
 .noActive{
     margin-left: 3px;
 }
@@ -342,8 +340,8 @@ body{
 
 .switch {
     position: relative;
-    width: 25px;
-    height: 15px;
+    width: 28px;
+    height: 17px;
   }
 
   /* Hide default HTML checkbox */
@@ -365,9 +363,9 @@ body{
   .slider:before {
     position: absolute;
     content: "";
-    height: 1vh;
-    width: 1vh;
-    left: 3px;
+    height: 12px;
+    width:  12px;
+    left: 2.5px;
     bottom: 2.5px;
     background-color: white;
     -webkit-transition: .4s;
@@ -472,6 +470,7 @@ h3{
     padding: 0 5%;
     /* border-radius: 0.5vw; */
     cursor: pointer;
+    color: white;
 }
 .createButton:hover{
     background-color: #134409;
@@ -499,7 +498,6 @@ h3{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     float: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.308);
 }
 #r911 div p:nth-child(1){
     width: 8%;
@@ -508,7 +506,6 @@ h3{
 #r911 div p:nth-child(1) i{
     width: 3vw;
     height: 1vw;
-    border-radius: 0.5vw;
     margin-left: calc(50% - 1.5vw);
     /* font-size: 0.8vw; */
     float: left;
@@ -562,7 +559,6 @@ h3{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     float: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.308);
 }
 #backup div p:nth-child(1){
     width: 10%;
@@ -612,7 +608,6 @@ h3{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     float: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.308);
 }
 
 #bolos div p:nth-child(1){
@@ -696,8 +691,6 @@ h3{
     font-size: 0.65vw;
     overflow: auto;
     margin: 1%;
-    background-color: rgba(43, 43, 43, 0.623);
-    border-radius: 6px;
 }
 
 .searchIndvDetails .divisory{
@@ -716,15 +709,16 @@ h3{
 
 
 
-#personContentID .tabs{
+.tabs{
     height: 2.5vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.39);
     float: left;
+    color: white;
     font-size: 1.8vh;
 }
 
-#personContentID .tabs .tab{
+.tabs .tab{
     height: 100%;
     padding: 0 1.5%;
     margin-right: 0.2%;
@@ -732,12 +726,12 @@ h3{
     float: left;
 }
 
-#personContentID .tabs .tab:hover{
+.tabs .tab:hover{
     background-color: rgb(14, 68, 117);
     cursor: pointer;
 }
 
-#personContentID .tabs .option{
+.tabs .option{
     height: 100%;
     padding: 0 1.5%;
     margin-left: 0.2%;
@@ -745,7 +739,7 @@ h3{
     float: right;
 }
 
-#personContentID .tabs .option:hover{
+.tabs .option:hover{
     background-color: rgb(186, 157, 29);
     cursor: pointer;
 }
@@ -826,8 +820,9 @@ h3{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     float: left;
-    border-bottom: 1px dotted white;
 }
+
+
 
 /* #chargesPlayer .listCharges div:hover{
     background: #363636;
@@ -985,6 +980,31 @@ h3{
     font-family: 'Courier New', Courier, monospace;
 }
 
+.tabCantentVehicle{
+    width: 100%;
+    height: calc(63% - 2.5vh);
+    float: left;
+    font-size: 0.7vw;
+}
+
+
+#notesVehicle{
+    height: 100%;
+    width: 100%;
+}
+
+#notesVehicle textarea{
+    height: 94%;
+    width: 98%;
+    border: none;
+    border-bottom: 3px solid #1D6EBA;
+    color: inherit;
+    background: rgba(0, 0, 0, 0.151);
+    resize: none;
+    margin: 1%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
  hr {
     border: 1px solid rgb(29, 110, 186);
     border-radius: 1px;
@@ -995,8 +1015,6 @@ h3{
 .colorDisplay{
     height:  0.8vw;
     width: 35%;
-    border-radius: 0.6vw;
-    border: 1px solid #cccccc;
 }
 
 #vehColor1{
@@ -1007,6 +1025,56 @@ h3{
     background-color: rgb(0, 0, 0);
 }
 
+.unitsContainer{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.unitsContainer .unit{
+    height: 20%;
+    width: 19%;
+    background-color: rgba(34, 34, 34, 0.699);
+    float: left;
+    color: #e0e0e0;
+    
+    margin: 1% 0.5%;
+}
+
+.unitsContainer .unit .Status{
+    width: 5%;
+    height: 100%;
+    float: left;
+}
+
+.unitsContainer .unit .unitName{
+    width: 100%;
+    float: left;
+    font-size: 2vh;
+    text-align: center;
+    background-color: rgba(19, 19, 19, 0.603);
+}
+
+.unitsContainer .unit .unitParticipants{
+    width: 100%;
+    float: left;
+    font-size: 0.85vh;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.unitsContainer .unit .joinButton{
+    width: 95%;
+    height: 2vh;
+    float: left;
+    font-size:  1.5vh;
+    text-align: center;
+    background-color: #1c630e81;
+}
+
+.unitsContainer .unit .joinButton:hover{
+    background-color: #1c630e;
+    cursor: pointer;
+}
 
 /* =========================================================================== Mini MDC */
 
@@ -1114,6 +1182,7 @@ h3{
     font-size: 1vh;
     text-align: center;
     cursor: pointer;
+    color: white;
 }
 
  .setcall:hover{
@@ -1127,8 +1196,8 @@ h3{
     background-color: rgba(17, 90, 14, 0.664);
     font-size: 1vh;
     text-align: center;
-    border-radius: 0 5px 5px 0;
     cursor: pointer;
+    color: white;
 }
 
 .responce:hover{
@@ -1143,6 +1212,7 @@ h3{
     font-size: 1vh;
     text-align: center;
     cursor: pointer;
+    color: white;
 }
 .closeCall:hover{
     background-color: rgb(66, 6, 6);

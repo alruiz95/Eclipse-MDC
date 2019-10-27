@@ -1,0 +1,24 @@
+#CompleteMDC {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.leftMenu {
+    background: #222;
+}
+
+.active{
+    border-left: 3px solid #21CCFC;
+}
+
+#chargesPlayer .listCharges div:nth-child(odd) {
+    background-color: rgba(29, 29, 29, 0.808);
+}
+
+.topRow div:nth-child(even) {
+    background-color: rgba(29, 29, 29, 0.808);
+}
+
+.searchIndvProperty{
+    border-bottom: 1px solid #cccccc67;
+}
