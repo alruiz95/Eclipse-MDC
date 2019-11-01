@@ -15,10 +15,19 @@
     background-color: rgba(29, 29, 29, 0.808);
 }
 
-.topRow div:nth-child(even) {
+.line:nth-child(even) {
     background-color: rgba(29, 29, 29, 0.808);
+}
+
+.topHomeColumn  > div:nth-child(3){
+    border-bottom: 1px solid #ffffff ;
+}
+
+#r911 .line div:nth-child(5) p:nth-child(1){
+    border-bottom: 1px solid #ffffff ;
 }
 
 .searchIndvProperty{
     border-bottom: 1px solid #cccccc67;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(36, 36, 36));
 }

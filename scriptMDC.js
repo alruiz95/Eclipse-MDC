@@ -18,7 +18,7 @@ var homeHTMLElement = document.createElement("div");
 var searchHTMLElement = document.createElement("div");
 var notepadHTMLElement = document.createElement("div");
 var unitsHTMLElement = document.createElement("div");
-var searchHTMLElement = document.createElement("div");
+var warrantHTMLElement = document.createElement("div");
 var searchHTMLElement = document.createElement("div");
 
 // ============= HOME IDS
@@ -47,6 +47,7 @@ function onLoad(){
   loadFileToElement(searchHTMLElement, "search");
   loadFileToElement(notepadHTMLElement, "notepad");
   loadFileToElement(unitsHTMLElement, "units");
+  loadFileToElement(warrantHTMLElement, "warrants");
 
   var checked = localStorage.getItem('darkTheme');
   if ((checked === 'true') || checked == null){
@@ -147,6 +148,9 @@ function clickMenuOption(divElement, option){
     case "units":
       document.getElementById(IdInnerMDC).innerHTML = unitsHTMLElement.innerHTML;
       break;
+    case "warrants":
+      document.getElementById(IdInnerMDC).innerHTML = warrantHTMLElement.innerHTML;
+      break;
   }
 
   
@@ -159,7 +163,7 @@ function updateMDC(){
   }
 }
 
-function loadFileToElement(element, filename) {
+function  loadFileToElement(element, filename) {
   var txtFile = new XMLHttpRequest();
   txtFile.open("GET", filename + ".html", false);
   txtFile.onreadystatechange = function() {
@@ -436,7 +440,7 @@ function unhideMDCHome(){
 }
 
 
-function add911Call(type, id, time, caller, information, onload=false){
+function add911Call(type, id, time, caller, location, information, onload=false){
   
   var boxElement = document.getElementById(callsBoxMiniID);
 
@@ -465,15 +469,15 @@ function add911Call(type, id, time, caller, information, onload=false){
 
   boxElement.innerHTML += inner;
   boxElement = homeHTMLElement.querySelector('#' + calls911ID);
-  inner = '<div id="call911-' + id + '">' +
-            '<p><i class="' + callType + '">' + id + '</i></p>' +
-            '<p>' + time + '</p>' +
-            '<p>0</p>' +
-            '<p>'+ caller + '</p>' +
-            '<p>' + information + '</p>' +
-            '<p><i class="fas fa-sign-in-alt responce" onclick="respondCall(' + id + ')"></i>' +
+  inner = '<div id="call911-' + id + '" class="line">' +
+            '<div><i class="' + callType + '">' + id + '</i></div>' +
+            '<div>' + time + '</div>' +
+            '<div>0</div>' +
+            '<div>'+ caller + '</div>' +
+            '<div> <p> '+ location + ' </p> <p> '+ information + ' </p> </div>' +
+            '<div><i class="fas fa-sign-in-alt responce" onclick="respondCall(' + id + ')"></i>' +
                 '<i class="fas fa-location-arrow setcall" onclick="setCall(' + id + ')"></i>' +
-                '<i class="fas fa-times closeCall" onclick="closeCall(' + id + ')"></i>' +
+                '<i class="fas fa-times closeCall" onclick="closeCall(' + id + ')"></i></div>' +
           '</div>'
   boxElement.innerHTML  = inner + boxElement.innerHTML;
   updateMDC();
@@ -500,7 +504,7 @@ function addBackupCall(isPanic, id, time, unit, information, onload=false){
   boxElement.innerHTML += inner;
 
   boxElement = homeHTMLElement.querySelector('#' + callsBackupID);
-  var inner = '<div id="call911-' + id + '" >' +
+  var inner = '<div id="call911-' + id + '" class="line">' +
                   '<p><i class="fa ' + (isPanic ?  'fa-exclamation-triangle' : 'fa-exclamation ') +'" ' + (isPanic ? 'style="color: rgb(252, 77, 77)"' : "") + '></i></p>' +
                   '<p>' + time + '</p>' +
                   '<p>0</p>' +
@@ -538,7 +542,7 @@ function closeCall(id){
 
 function addBoloToMDC (id, time, plate, person, information) {
   var boxElement = homeHTMLElement.querySelector('#' + bolosListID);
-  var inner = '<div id="boloID-' + id + '">' +
+  var inner = '<div id="boloID-' + id + '" class="line">' +
                 '<p>' + id + '</p>' +
                 '<p>' + time + '</p>' +
                 '<p ' + ((plate !== null && plate !== '') ? 'class="clicklabe"': '') +'>' + ((plate !== null && plate !== '') ? plate: 'N/A') +'</p>' +
@@ -601,15 +605,15 @@ function toggleSearTab(id){
 
 
 function tempData (){
-  add911Call(2, 543, "10:12", "Arnold Williams", "There's a shootout and people are hurt", true);
-  add911Call(1, 544, "10:22", "Jon_Cena", "I just hit a pole, need help", true);
+  add911Call(2, 543, "10:12", "Arnold Williams", "Los Santos, Metro", "There's a shootout and people are hurt", true);
+  add911Call(1, 544, "10:22", "Jon_Cena", "Los Santos, Metro", "I just hit a pole, need help", true);
   addBackupCall(true, 548,  "11:01", "22-L-18", "", true);
-  add911Call(0, 545, "10:43", "Travis palmer", "My car just broke down and now i need a fucking ride to this call help", true);
+  add911Call(0, 545, "10:43", "Travis palmer", "Los Santos County, Sady Shores", "My car just broke down and now i need a fucking ride to this call help", true);
   addBackupCall(false, 549,  "11:23", "22-L-18", "For MD", true);
-  add911Call(0, 546, "10:46", "Mary Davis", "My car just broke down and now i need a fucking ride to this call ssomsm dfg sdfg fdg", true);
-  add911Call(0, 547, "10:56", "Harry Davis", "My car just broke down and now i need a fucking ride to this call ssomsm dfg sdfg fdg", true);
+  add911Call(0, 546, "10:46", "Mary Davis", "Los Santos County, Sady Shores", "My car just broke down and now i need a fucking ride to this call ssomsm dfg sdfg fdg", true);
+  add911Call(0, 547, "10:56", "Harry Davis", "Los Santos County, Sady Shores", "My car just broke down and now i need a fucking ride to this call ssomsm dfg sdfg fdg", true);
   addBackupCall(true, 550,  "11:40", "Staff 1", "", true);
-  add911Call(0, 551, "11:03", "Cashier", "CCTV cameras noticed unusual activities going on the store. Alarm has been triggered", true);
+  add911Call(0, 551, "11:03", "Cashier","Los Santos, Metro", "CCTV cameras noticed unusual activities going on the store. Alarm has been triggered", true);
 
 
   addBoloToMDC (0, "17:30", "24SJDB435L", "Feemo_Jhonson", "Driving Blue and red Chino, Blue shirt, Felony Evation");
