@@ -278,13 +278,16 @@ function showWanted(){
 }
 
 function searchVehicle(){
+  document.getElementById("wantedWarning").hidden = true;
+  document.getElementById("searEmpty").hidden = true;
   document.getElementById(PersonContent).hidden = true;
   document.getElementById(VehicleContent).hidden = false;
 }
 
 // ==================================================== Individual Seaarch
 function searchPerson(){
-  
+  document.getElementById("wantedWarning").hidden = true;
+  document.getElementById("searEmpty").hidden = true;
   document.getElementById(indvChargers).innerHTML = "";
   document.getElementById(PersonContent).hidden = false;
   document.getElementById(VehicleContent).hidden = true;

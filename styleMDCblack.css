@@ -1,5 +1,5 @@
 #CompleteMDC {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(48, 48, 48, 0.938);
     color: white;
 }
 
@@ -29,5 +29,8 @@
 
 .searchIndvProperty{
     border-bottom: 1px solid #cccccc67;
-    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(36, 36, 36));
+}
+
+#searEmpty{
+    color: rgb(82, 82, 82);
 }

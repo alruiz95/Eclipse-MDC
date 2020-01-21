@@ -269,7 +269,7 @@ textarea{
     margin-left: 4px;
     float: left;
     padding: 0 10px;
-    width: 450px;
+    width: 10vw;
     background-color: rgba(34, 34, 34, 0.432);
 }
 
@@ -690,6 +690,13 @@ h3{
 }
 
 /* ======== Search =========== */
+
+#searEmpty{
+    text-align: center;
+    padding: 15% 0;
+    font-size: 2vw;
+}
+
 
 .searchIndvPhoto{
     float: left;
