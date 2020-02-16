@@ -21,6 +21,8 @@ var unitsHTMLElement = document.createElement("div");
 var warrantHTMLElement = document.createElement("div");
 var searchHTMLElement = document.createElement("div");
 
+var addBoloElement = document.createElement("div");
+
 // ============= HOME IDS
 var callsBoxMiniID="idCallsBox";
 var calls911ID="calls911Id";
@@ -48,6 +50,7 @@ function onLoad(){
   loadFileToElement(notepadHTMLElement, "notepad");
   loadFileToElement(unitsHTMLElement, "units");
   loadFileToElement(warrantHTMLElement, "warrants");
+  loadFileToElement(addBoloElement, "addBolo");
 
   var checked = localStorage.getItem('darkTheme');
   if ((checked === 'true') || checked == null){
@@ -291,7 +294,8 @@ function searchPerson(){
   document.getElementById(indvChargers).innerHTML = "";
   document.getElementById(PersonContent).hidden = false;
   document.getElementById(VehicleContent).hidden = true;
-  loadIndvDetails("Arnold Williams", "20/07/1995", 20, 1243245,"Costarrican","Black","black","blue",true,false,"20/07/2020",false,false,1,true,"something cool here \n testing",true);
+  loadIndvDetails("Arnold Williams", "20/07/1995", 20, 1243245,"Costarrican","Black","black","blue", "Los Santos Police Department", "Police Officer III",
+                  true,false,"20/07/2020",false,false,1,true,10,15,"something cool here \n testing",true);
   addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
   addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
   addCharge("20/23/2019 04:23", "VC023","Brandishing a Firearm or Weapon (Misdmainor $1000) attempt againts a goverment employee something more", "Arnold Williams");
@@ -307,7 +311,9 @@ function searchPerson(){
 }
 
 
-function loadIndvDetails(name, dateOfBirth, age, phoneNumber, nationality, hairColor, skinColor, eyeColor, driverLic, truckLic, weaponLic, probation, bolo, deremits, mugsAndPrints, AddicionalInformation, wanted = false) {
+function loadIndvDetails(name, dateOfBirth, age, phoneNumber, nationality, hairColor, skinColor, 
+                          eyeColor, job, jobposition,
+                          driverLic, truckLic, weaponLic, probation, bolo, deremits, mugsAndPrints, totalImprisoments, totalCitations, AddicionalInformation, wanted = false) {
 
   var details =  document.getElementById(PersonContent).querySelectorAll('.searchIndvProperty');
   details[0].querySelector("div:nth-child(2)").innerHTML = name;
@@ -318,98 +324,107 @@ function loadIndvDetails(name, dateOfBirth, age, phoneNumber, nationality, hairC
   details[5].querySelector("div:nth-child(2)").innerHTML = hairColor;
   details[6].querySelector("div:nth-child(2)").innerHTML = skinColor;
   details[7].querySelector("div:nth-child(2)").innerHTML = eyeColor;
+  details[8].querySelector("div:nth-child(2)").innerHTML = job;
+  details[9].querySelector("div:nth-child(2)").innerHTML = jobposition;
+  details[14].querySelector("div:nth-child(2)").innerHTML = totalImprisoments;
+  details[15].querySelector("div:nth-child(2)").innerHTML = totalCitations;
 
 
-  details[8].querySelector("div:nth-child(3)").innerHTML = "";
-  if (typeof driverLic === "boolean" && driverLic == true){
-    details[8].querySelector("div:nth-child(2)").classList.add("Valid");
-    details[8].querySelector("div:nth-child(2)").classList.remove("Invalid");
-    details[8].querySelector("div:nth-child(2)").innerHTML = "Valid";
-  }
-  else if (typeof driverLic === "boolean" && driverLic == false){
-    details[8].querySelector("div:nth-child(2)").classList.remove("Valid");
-    details[8].querySelector("div:nth-child(2)").classList.add("Invalid");
-    details[8].querySelector("div:nth-child(2)").innerHTML = "Invalid";
-  }
-  if (typeof driverLic === "string"){
-    details[8].querySelector("div:nth-child(2)").classList.remove("Valid");
-    details[8].querySelector("div:nth-child(2)").classList.add("Invalid");
-    details[8].querySelector("div:nth-child(2)").innerHTML = "Invalid";
-    details[8].querySelector("div:nth-child(3)").innerHTML = "Suspended til: " + driverLic;
-  }
-  
-
-  details[9].querySelector("div:nth-child(3)").innerHTML = "";
-  if (typeof truckLic === "boolean" && truckLic == true){
-    details[9].querySelector("div:nth-child(2)").classList.add("Valid");
-    details[9].querySelector("div:nth-child(2)").classList.remove("Invalid");
-    details[9].querySelector("div:nth-child(2)").innerHTML = "Valid";
-  }
-  else if (typeof truckLic === "boolean" && truckLic == false){
-    details[9].querySelector("div:nth-child(2)").classList.remove("Valid");
-    details[9].querySelector("div:nth-child(2)").classList.add("Invalid");
-    details[9].querySelector("div:nth-child(2)").innerHTML = "Invalid";
-  }
-  if (typeof truckLic === "string"){
-    details[9].querySelector("div:nth-child(2)").classList.remove("Valid");
-    details[9].querySelector("div:nth-child(2)").classList.add("Invalid");
-    details[9].querySelector("div:nth-child(2)").innerHTML = "Invalid";
-    details[9].querySelector("div:nth-child(3)").innerHTML = "Suspended til: " + truckLic;
-  }
-
-  details[10].querySelector("div:nth-child(3)").innerHTML = "";
-  if (typeof weaponLic === "boolean" && weaponLic == true){
+                            
+  if (probation == true){
     details[10].querySelector("div:nth-child(2)").classList.add("Valid");
     details[10].querySelector("div:nth-child(2)").classList.remove("Invalid");
-    details[10].querySelector("div:nth-child(2)").innerHTML = "Valid";
+    details[10].querySelector("div:nth-child(2)").innerHTML = "Yes";
   }
-  else if (typeof weaponLic === "boolean" && weaponLic == false){
+  else {
     details[10].querySelector("div:nth-child(2)").classList.remove("Valid");
     details[10].querySelector("div:nth-child(2)").classList.add("Invalid");
-    details[10].querySelector("div:nth-child(2)").innerHTML = "Invalid";
-  }
-  else{
-    details[10].querySelector("div:nth-child(2)").classList.remove("Valid");
-    details[10].querySelector("div:nth-child(2)").classList.add("Invalid");
-    details[10].querySelector("div:nth-child(2)").innerHTML = "Invalid";
-    details[10].querySelector("div:nth-child(3)").innerHTML = "Suspended til: " + weaponLic;
+    details[10].querySelector("div:nth-child(2)").innerHTML = "No";
   }
 
-
-  if (probation == true){
+  if (bolo != true){
     details[11].querySelector("div:nth-child(2)").classList.add("Valid");
     details[11].querySelector("div:nth-child(2)").classList.remove("Invalid");
-    details[11].querySelector("div:nth-child(2)").innerHTML = "Yes";
+    details[11].querySelector("div:nth-child(2)").innerHTML = "Clean";
   }
   else {
     details[11].querySelector("div:nth-child(2)").classList.remove("Valid");
     details[11].querySelector("div:nth-child(2)").classList.add("Invalid");
-    details[11].querySelector("div:nth-child(2)").innerHTML = "No";
+    details[11].querySelector("div:nth-child(2)").innerHTML = "Wanted";
   }
 
-  if (bolo != true){
-    details[12].querySelector("div:nth-child(2)").classList.add("Valid");
-    details[12].querySelector("div:nth-child(2)").classList.remove("Invalid");
-    details[12].querySelector("div:nth-child(2)").innerHTML = "Clean";
-  }
-  else {
-    details[12].querySelector("div:nth-child(2)").classList.remove("Valid");
-    details[12].querySelector("div:nth-child(2)").classList.add("Invalid");
-    details[12].querySelector("div:nth-child(2)").innerHTML = "Wanted";
-  }
-
-  details[13].querySelector("div:nth-child(2)").innerHTML = deremits;
+  details[12].querySelector("div:nth-child(2)").innerHTML = deremits;
 
   if (mugsAndPrints == true){
-    details[14].querySelector("div:nth-child(2)").classList.add("Valid");
-    details[14].querySelector("div:nth-child(2)").classList.remove("Invalid");
-    details[14].querySelector("div:nth-child(2)").innerHTML = "Taken";
+    details[13].querySelector("div:nth-child(2)").classList.add("Valid");
+    details[13].querySelector("div:nth-child(2)").classList.remove("Invalid");
+    details[13].querySelector("div:nth-child(2)").innerHTML = "Taken";
   }
   else {
-    details[14].querySelector("div:nth-child(2)").classList.remove("Valid");
-    details[14].querySelector("div:nth-child(2)").classList.add("Invalid");
-    details[14].querySelector("div:nth-child(2)").innerHTML = "Missing";
+    details[13].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[13].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[13].querySelector("div:nth-child(2)").innerHTML = "Missing";
   }
+
+
+
+
+  details[16].querySelector("div:nth-child(3)").innerHTML = "";
+  if (typeof driverLic === "boolean" && driverLic == true){
+    details[16].querySelector("div:nth-child(2)").classList.add("Valid");
+    details[16].querySelector("div:nth-child(2)").classList.remove("Invalid");
+    details[16].querySelector("div:nth-child(2)").innerHTML = "Valid";
+  }
+  else if (typeof driverLic === "boolean" && driverLic == false){
+    details[16].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[16].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[16].querySelector("div:nth-child(2)").innerHTML = "Invalid";
+  }
+  if (typeof driverLic === "string"){
+    details[16].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[16].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[16].querySelector("div:nth-child(2)").innerHTML = "Invalid";
+    details[16].querySelector("div:nth-child(3)").innerHTML = "Suspended til: " + driverLic;
+  }
+  
+
+  details[17].querySelector("div:nth-child(3)").innerHTML = "";
+  if (typeof truckLic === "boolean" && truckLic == true){
+    details[17].querySelector("div:nth-child(2)").classList.add("Valid");
+    details[17].querySelector("div:nth-child(2)").classList.remove("Invalid");
+    details[17].querySelector("div:nth-child(2)").innerHTML = "Valid";
+  }
+  else if (typeof truckLic === "boolean" && truckLic == false){
+    details[17].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[17].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[17].querySelector("div:nth-child(2)").innerHTML = "Invalid";
+  }
+  if (typeof truckLic === "string"){
+    details[17].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[17].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[17].querySelector("div:nth-child(2)").innerHTML = "Invalid";
+    details[17].querySelector("div:nth-child(3)").innerHTML = "Suspended til: " + truckLic;
+  }
+
+  details[18].querySelector("div:nth-child(3)").innerHTML = "";
+  if (typeof weaponLic === "boolean" && weaponLic == true){
+    details[18].querySelector("div:nth-child(2)").classList.add("Valid");
+    details[18].querySelector("div:nth-child(2)").classList.remove("Invalid");
+    details[18].querySelector("div:nth-child(2)").innerHTML = "Valid";
+  }
+  else if (typeof weaponLic === "boolean" && weaponLic == false){
+    details[18].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[18].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[18].querySelector("div:nth-child(2)").innerHTML = "Invalid";
+  }
+  else{
+    details[18].querySelector("div:nth-child(2)").classList.remove("Valid");
+    details[18].querySelector("div:nth-child(2)").classList.add("Invalid");
+    details[18].querySelector("div:nth-child(2)").innerHTML = "Invalid";
+    details[18].querySelector("div:nth-child(3)").innerHTML = "Suspended til: " + weaponLic;
+  }
+
+
 
   //document.getElementById(PersonContent).querySelector("textarea").value = AddicionalInformation;
 }
@@ -570,6 +585,17 @@ function toggleSearTab(id){
   document.getElementById(id).hidden = false;
 }
 
+function createBoloClick(){
+  document.getElementById(IdInnerMDC).innerHTML = addBoloElement.innerHTML;
+}
+
+function cancelBoloClick(){
+  document.getElementById(IdInnerMDC).innerHTML = homeHTMLElement.innerHTML;
+}
+
+function createBolo(){
+  document.getElementById(IdInnerMDC).innerHTML = homeHTMLElement.innerHTML;
+}
 
 ///////////////////////////////=================== JQUERRY
 (function( $ ){

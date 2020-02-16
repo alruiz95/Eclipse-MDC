@@ -479,6 +479,21 @@ h3{
     background-color: #1c630e;
 }
 
+.cancelButton{
+    float: right;
+    background-color: #770f0f98;
+    padding: 0 5%;
+    /* border-radius: 0.5vw; */
+    cursor: pointer;
+    color: white;
+}
+.cancelButton:hover{
+    background-color: #440909;
+}
+.cancelButton:active{
+    background-color: #630e0e;
+}
+
 #r911{
     width: 100%;
 }
@@ -737,9 +752,9 @@ h3{
 
 .searchIndvDetails{
     float: left;
-    width: 35%;
+    width: 25%;
     height: 90%;
-    padding: 0 1%;
+    padding: 0 0.5%;
     /* margin-right: 0.5%; */
     /* margin-bottom: 10px; */
     font-size: 0.65vw;
@@ -1081,47 +1096,67 @@ h3{
 }
 
 .unitsContainer{
-    height: 100%;
+    height: 95%;
     width: 100%;
     overflow-y: auto;
 }
 
 .unitsContainer .unit{
-    height: 20%;
-    width: 19%;
+    height: 3vh;
+    width: 95%;
     background-color: rgba(34, 34, 34, 0.699);
     float: left;
     color: #e0e0e0;
-    
-    margin: 1% 0.5%;
+    margin: 0.1% 0.5%;
 }
 
 .unitsContainer .unit .Status{
-    width: 5%;
+    width: 1.5%;
     height: 100%;
     float: left;
 }
 
 .unitsContainer .unit .unitName{
-    width: 100%;
+    width: 10%;
     float: left;
     font-size: 2vh;
     text-align: center;
+    height: 100%;
     background-color: rgba(19, 19, 19, 0.603);
 }
 
 .unitsContainer .unit .unitParticipants{
-    width: 100%;
+    width: 54%;
     float: left;
-    font-size: 0.85vh;
+    padding-top: 0.25vh;
+    font-size: 1.5vh;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.unitsContainer .unit .joinButton{
-    width: 95%;
-    height: 2vh;
+
+.unitsContainer .unit .unitStatus{
+    width: 10%;
+    height: 100%;
     float: left;
-    font-size:  1.5vh;
+    padding-top: 0.25vh;
+    font-size: 1.5vh;
+    text-align: center;
+    background-color: rgba(19, 19, 19, 0.603);
+}
+
+.unitsContainer .unit .unitCall{
+    width: 10%;
+    float: left;
+    padding-top: 0.25vh;
+    font-size: 1.5vh;
+    text-align: center;
+}
+
+.unitsContainer .unit .joinButton{
+    height: 100%;
+    padding: 0 1vh;
+    float: right;
+    font-size:  2vh;
     text-align: center;
     background-color: #1c630e81;
 }
@@ -1131,6 +1166,32 @@ h3{
     cursor: pointer;
 }
 
+.unitsContainer .unit .leaveButton{
+    height: 100%;
+    padding: 0 1vh;
+    float: right;
+    font-size:  2vh;
+    text-align: center;
+    background-color: #635a0e81;
+}
+
+.unitsContainer .unit .leaveButton:hover{
+    background-color: #5d630e;
+    cursor: pointer;
+}
+.unitsContainer .unit .disbandButton{
+    height: 100%;
+    padding: 0 1vh;
+    float: right;
+    font-size:  2vh;
+    text-align: center;
+    background-color: #630e0e81;
+}
+
+.unitsContainer .unit .disbandButton:hover{
+    background-color: #630e0e;
+    cursor: pointer;
+}
 /* =========================================================================== Mini MDC */
 
 .miniMDC {
@@ -1178,22 +1239,21 @@ h3{
     border-radius: 0 5px 5px 0;
     margin-left: 5px;
 }
-
-.pdUnit{
+.miniUnit{
     width: 5px;
-    height: 100%;
-    float: left;
     border-radius: 5px 0 0 5px;
     margin-right: 5px;
+}
+
+.pdUnit{
+    height: 100%;
+    float: left;
     background-color: #1D6EBA;
 }
 
 .sdUnit{
-    width: 5px;
     height: 100%;
     float: left;
-    border-radius: 5px 0 0 5px;
-    margin-right: 5px;
     background-color: rgb(186, 123, 29);
 }
 
@@ -1290,6 +1350,11 @@ h3{
     background-color: rgb(66, 6, 6);
 }
 
+#warrantsContent {
+    width: 100%; 
+    height: 95.3%; 
+    float: left; 
+}
 
 #warrantsContent h3{
     border-bottom: 2px solid #1D6EBA;
@@ -1297,6 +1362,37 @@ h3{
     text-align: center;
 }
 
+.wantedCard{
+    height: 5vw;
+    width: 12.5vw;
+    background-color: rgba(19, 19, 19, 0.767);
+    margin: 1%;
+    float: left;
+}
+.wantedCard:hover{
+    background-color: rgba(44, 44, 44, 0.993);
+    cursor: pointer;
+}
+.indvPhoto{
+    float: left;
+    height: 95%;
+    width: 40%;
+    background-image: url("imgs/mugshot.jpg") ;
+    background-color: #cccccc;
+    /* margin-right: 20px; */
+    margin: 1%;
+    margin-right: 5%;
+    border-radius: 5%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.indvPhoto img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5%;
+}
 
 
 
